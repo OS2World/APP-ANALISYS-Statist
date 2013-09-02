@@ -1,0 +1,115 @@
+.pc
+.TH STATIST 1 "September 2006" "Version 1.4.1" "STATIST Manual Page"
+.SH NAME
+statist \- statistics program.
+.SH SYNOPSIS
+.B statist
+[ options ] data_file
+
+.SH DESCRIPTION
+.BR statist
+is a terminal-based statistics program with an interactive menu that makes it
+very easy to use. It can also be run in scripts and big datasets are handled
+reasonably well even on small machines. In spite of its low overhead statist
+can do quite a bunch of regression functions and tests. It can produce
+colorized output and uses gnuplot to create graphics.
+
+.SH OPTIONS
+.l
+statist accepts the following command line options:
+.TP 9
+.B \-h, \-?, \-\-help
+Print a short help message and exit.
+.TP 9
+.B \-\-quiet, \-\-silent
+Don't print menu etc. (for batch/script usage).
+.TP 9
+.B \-\-log
+Write results to log file `statist.log'.
+.TP 9
+.B \-\-nofile
+Don't read a data file when starting the program.
+.TP 9
+.B \-\-nobell
+No beep at errors and warnings.
+.TP 9
+.B \-\-thist
+Histogram as text graphic instead of gnuplot-graphic.
+.TP 9
+.B \-\-noplot
+No gnuplot-graphic.
+.TP 9
+.B \-\-color
+Colorized output.
+.TP 9
+.B \-\-labels \fIfile\fP
+Read column titles and value labels from \fIfile\fP.
+.TP 9
+.B \-\-header
+the file has column names in the first line
+.TP 9
+.B \-\-noheader
+the file does not have column names
+.TP 9
+.B \-\-sep \fIchar\fP
+field separator character
+.TP 9
+.B \-\-dec \fIchar\fP
+decimal delimiter character (default: '.')
+.TP 9
+.B \-\-na-string \fIstring\fP
+indicator of missing values (default: "\fIM\fP")
+.TP 9
+.B \-\-xcols \fIconf_file\fP \fIfixed_width_datafile\fP \fIdest_file\fP
+Extract columns from a fixed width data file. The content of a
+\fIconf\_file\fP is simply a list of variable names and their position
+in the fixed width data file
+.TP 9
+.B \-\-xsample \fIpercentage\fP \fIdata_base\fP \fIdest_file\fP
+Extract a sample of rows from a file; \fIpercentage\fP must be an integer
+number between 1 and 99.
+.TP 9
+.B \-\-bernhard
+Special output changes from Bernhard, i.e.:
+  \- table output at Miscellaneous/Standard deviation
+  \- if \-\-noplot defined no text histogram at
+    Miscellaneous/Standard
+    deviation
+.SH FILES
+.PP
+.IP "~/.statistrc"
+User configuration file.
+.IP "/etc/statistrc"
+System-wide configuration file.
+.SH "REPORTING BUGS"
+Report bugs to <statist-list@intevation.de>.
+.SH COPYRIGHT
+Copyright \(co Dirk Melcher 1997-1999
+.br
+Copyright \(co Bernhard Reiter 1998-2006
+.br
+Copyright \(co Jakson Aquino 2005-2006
+.br
+STATIST comes with ABSOLUTELY NO WARRANTY; it is Free Software under GNU GPL.
+See
+.B /usr/share/doc/statist/copyright
+for details.
+.SH SEE ALSO
+.PP
+.BR gnuplot (1),
+.BR awk (1),
+.BR sort (1),
+.BR join (1)
+.PP
+Statist 
+.B Homepage:
+http://statist.wald.intevation.org/
+.PP
+The Statist 
+.B User Manual
+(English and Portuguese):
+.br
+/usr/share/doc/statist or /usr/local/share/doc/statist
+.SH AUTHOR
+.PP
+This man page was written by Jakson Aquino.

@@ -1,0 +1,136 @@
+/* Portuguese version of README */
+
+Essa é uma tradução do arquivo README referente ao Statist 1.4.2.
+Se a versão do Statist que você obteve for mais recente, este arquivo
+poderá estar desatualizado. Verifique o README original. 
+
+statist versão 1.4.2
+$Date: 2009/12/21 17:38:15 $
+
+Website: http://statist.wald.intevation.org/index.pt.html
+
+Copyright (C) 1997-1999 Dirk Melcher <Dirk.Melcher@usf.Uni-Osnabrueck.DE>
+Copyright (C) 1998-2009 Bernhard Reiter <bernhard@intevation.de>
+Copyright (C) 2005-2009 Jakson Aquino <jalvesaq@gmail.com>
+
+
+LICENÇA
+=======
+
+  O statist é distribuído sob a licença GNU/GPL. Por favor, veja o arquivo
+  COPYING para os detalhes.
+
+
+INSTALAÇÃO
+===========
+
+  Depois de descompactar o código fonte do Statist, vá para a raiz do diretório
+  do statist e digite:
+  
+    make
+    su
+    [senha do superusuário]
+    make install
+
+  Essa é a instalação padrão, que copiará o arquivo binário "statist", os
+  catálogos de mensagens, a "man page", e os documentos em pdf para /usr/local.
+  Se você preferir esses arquivos em outros lugares, edite o arquivo
+  Makefile.inc. Veja o diretório "po" para saber quais catálogos de tradução
+  estão disponíveis.
+
+
+  Se você não tem o poder de se tornar superusuário:
+  --------------------------------------------------
+
+  Modifique o "PREFIX" no Makefile.inc para o seu diretório: /home/seulogin,
+  mas note que o diretório ~/bin deve estar no seu "PATH".
+
+
+  GNUPLOT:
+  --------
+
+  O Statist depende do gnuplot para criar gráficos. Você pode obter o
+  programa em:
+
+    http://www.gnuplot.info/
+
+
+  Suporte a gettext no DOS/Windows:
+  ---------------------------------
+
+  Para usar o Statist em outras línguas além do inglês, é preciso que seu
+  sistema tenha suporte ao gettext. No Windows, você terá que instalar a
+  libintl. Não esqueça de configurar o path do Windows para incluir o
+  diretório C:\GnuWin32\bin. Também funcionará se ao invés de editar o
+  autoexec.bat, você simplesmente copiar os arquivos libiconv2.dll e
+  libintl3.dll para um diretório que já esteja no path, como C:\Windows. Você
+  pode obter a libintl para Windows em:
+
+    http://gnuwin32.sourceforge.net/packages/libintl.htm
+
+  O Statist irá procurar os catálogos de mensagens em STATIST/locale, onde
+  "STATIST" é a pasta em que o arquivo executável statist estiver.  Se o
+  Statist não estiver reconhecendo o catálogo brasileiro em
+  STATIST/locale/pt_BR/LC_MESSAGES, tente colocá-lo em
+  STATIST/locale/pt/LC_MESSAGES. O gettext usa as configurações regionais do
+  Windows para escolher a língua a ser usada. Devido ao Statist ser um
+  aplicativo do DOS e o GnuPlot ser do Windows, eles usam conjuntos de
+  caracteres diferentes. O resultado é que se você usar os arquivos .gmo
+  originais que acompanham o arquivo tar.gz do Statist, você não terá os
+  acentos corretamente exibidos na janela do DOS, embora os gráficos fiquem
+  normais.  Antes de compilar os arquivos .gmo você deveria converter os
+  arquivos po para o conjunto de caracteres correto (cp850) e, então, converter
+  as mensagens que serão enviadas para o gnuplot de volta para iso8859-1.
+
+
+  Se seu sistema não tem gettext:
+  -------------------------------
+
+  Edite o arquivo src/Makefile, descomentando a linha:
+
+    EXTRACFLAGS += -DNO_GETTEXT
+
+
+  Instalação no DOS/Windows:
+  --------------------------
+
+  * Se você tiver problemas para compilar o Statist para DOS/Windows, poderá
+    tentar descomentar as opções '-DNO_VALUES_H' e '-DNO_IOCTIL_H'. Veja abaixo
+    comentários sobre o que fazer com algumas versões do gcc:
+
+  
+  * DJGPP (2.03):
+
+    Você talvez não consiga compilar com suporte a gettext.
+
+  * MinGW (ou Dev-C++, que inclui o MinGW):
+
+    Veja acima o que fazer se você não tem gettext.  Você precisará editar
+    src/Makefile e descomentar a opção '-DMSDOS'. Para compilar com suporte a
+    gettext, descomente as opções `-lintl3', `-L"C:/GnuWin32/bin"' e
+    `L"C:/GnuWin32/bin"'. Se você estiver compilando com Dev-C++, terá também
+    que descomentar as opções `-L"C:/DEV-CPP/lib"' e `-I"C:/DEV-CPP/include"'.
+
+  * CygWin (98-4.10):
+
+    Para compilar com gettext, descomente a opção '-lintl'.
+
+
+  Se você quiser rodar as verificações no diretório tests:
+  --------------------------------------------------------
+
+  Você terá que ter pelo menos a versão 0.8.0 da unidade c de testes ("check")
+  de Arien Malec (http://check.sf.net/). Corrija tests/Makefile se você não
+  tem a unidade no seu path padrão. Então digite "make check" no diretório
+  src ou no diretório principal do statist.
+
+
+DOCUMENTAÇÃO
+=============
+
+  Se você tiver obtido o arquivo .tar.gz do Statist, a documentação estará
+  pronta paa ser lida no diretório doc. Mas se você tiver baixado o Statist
+  usando o cvs, será preciso compilar os documentos LaTeX em pdf. Digite "make"
+  no diretório doc.
+
+

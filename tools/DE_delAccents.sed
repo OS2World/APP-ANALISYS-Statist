@@ -1,0 +1,9 @@
+s/ä/ae/g
+s/ö/oe/g
+s/ü/ue/g
+s/ß/ss/g
+s/Ä/AE/g
+s/Ö/Oe/g
+s/Ü/UE/g
+s/µ/mu/g
+s/²/^2/g

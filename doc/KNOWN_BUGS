@@ -1,0 +1,31 @@
+
+Please, if you find a bug not listed below, do one of the following to help
+improving statist:
+
+  - add a bug to the bug tracker system at
+    http://wald.intevation.org/tracker/?group_id=12
+  
+  - send an email to statist-list@intevation.de
+
+
+--------------------------------------------------------------------------
+Bekannte Fehler in statist:
+Known Bugs.
+
+Fri Feb 23 18:43:41 MET 2001
+
+Die Ergebnissausgabe bei Tests is inkonsistent und schwierig zu verstehen.
+("Wahrscheinlichkeit für H0" und so.)
+
+The output of tests is a bit inconsistent and unnecessarily hard
+to understand at some places.
+
+
+Mon Nov 13 11:22:55 MET 2000
+Die Dokumenation ist nicht auf dem neusten Stand.
+
+The documentation has not been updated fully to the latest version.
+Particularly, it's desirable a translation of the German section "Funktionen"
+of "stat_man.pdf" (p. 5-10).
+
+

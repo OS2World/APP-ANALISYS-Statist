@@ -1,0 +1,2468 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-12-21 14:17-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/menue.c:91 ../src/menue.c:163 ../src/menue.c:303 ../src/menue.c:412
+#: ../src/menue.c:576 ../src/menue.c:756 ../src/menue.c:894
+msgid ""
+"\n"
+"  Your choice: "
+msgstr ""
+
+#: ../src/procs.c:2376
+msgid ""
+"\n"
+" Sum      |"
+msgstr ""
+
+#: ../src/statist.c:243
+#, c-format
+msgid ""
+"\n"
+" You can create an ~/.statistrc file to increase statist functionality.\n"
+" There is an example of statistrc at %s.\n"
+msgstr ""
+
+#: ../src/procs.c:2670
+#, c-format
+msgid ""
+"\n"
+"%i possible outliers found\n"
+"\n"
+msgstr ""
+
+#: ../src/statist.c:659
+msgid ""
+"\n"
+"> statist-fatal error "
+msgstr ""
+
+#: ../src/procs.c:2382
+#, c-format
+msgid ""
+"\n"
+"Chi^2                            = %f\n"
+msgstr ""
+
+#: ../src/procs.c:952
+msgid ""
+"\n"
+"Chi^2-test:\n"
+msgstr ""
+
+#: ../src/menue.c:792 ../src/menue.c:818
+#, c-format
+msgid ""
+"\n"
+"Created column %s with %i values!\n"
+msgstr ""
+
+#: ../src/procs.c:237 ../src/procs.c:544
+msgid ""
+"\n"
+"F-Test:\n"
+msgstr ""
+
+#: ../src/procs.c:233
+#, c-format
+msgid ""
+"\n"
+"F-value = %f\n"
+msgstr ""
+
+#: ../src/procs.c:1567
+msgid ""
+"\n"
+"Histogram (class center - number of values)\n"
+msgstr ""
+
+#: ../src/procs.c:2135
+msgid ""
+"\n"
+"Hypothesis H0: Samples originate from the same set versus\n"
+msgstr ""
+
+#: ../src/procs.c:1863 ../src/procs.c:1912
+msgid ""
+"\n"
+"Hypothesis H0: mu1=mu2 versus hypothesis H1: mu1#mu2 (->two-sided)\n"
+msgstr ""
+
+#: ../src/procs.c:2026
+msgid ""
+"\n"
+"Hypothesis H0: x and y originate from the same set versus\n"
+msgstr ""
+
+#: ../src/data.c:916
+#, c-format
+msgid ""
+"\n"
+"New source file: %s\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:357
+#, c-format
+msgid ""
+"\n"
+"Original y-Vector: r^%6.4f  q^2=%6.4f\n"
+"\n"
+msgstr ""
+
+#: ../src/data.c:866
+msgid ""
+"\n"
+"Read data sets: \n"
+msgstr ""
+
+#: ../src/procs.c:2129
+msgid ""
+"\n"
+"Result Kruskal-Wallis-Test:\n"
+msgstr ""
+
+#: ../src/procs.c:1775
+msgid ""
+"\n"
+"Result SPEARMAN's Rank-Correlation:\n"
+msgstr ""
+
+#: ../src/procs.c:2529
+msgid ""
+"\n"
+"Result Wilcoxon-Test:\n"
+msgstr ""
+
+#: ../src/procs.c:1696
+msgid ""
+"\n"
+"Result general statistical information:\n"
+msgstr ""
+
+#: ../src/procs.c:71
+msgid ""
+"\n"
+"Result partial correlation:\n"
+msgstr ""
+
+#: ../src/procs.c:1425
+msgid ""
+"\n"
+"Result point biserial correlation:\n"
+msgstr ""
+
+#: ../src/procs.c:528
+msgid ""
+"\n"
+"Result polynomial regression:\n"
+msgstr ""
+
+#: ../src/procs.c:1857
+msgid ""
+"\n"
+"Result t-Test for independent samples\n"
+msgstr ""
+
+#: ../src/procs.c:1906
+msgid ""
+"\n"
+"Result t-Test for pairwise ordered samples\n"
+msgstr ""
+
+#: ../src/procs.c:2019
+msgid ""
+"\n"
+"Result u-Test:\n"
+msgstr ""
+
+#: ../src/procs.c:157
+msgid ""
+"\n"
+"Results multiple linear regression:\n"
+msgstr ""
+
+#: ../src/procs.c:1352
+msgid ""
+"\n"
+"Results of linear regression:\n"
+msgstr ""
+
+#: ../src/statist.h:30
+#, c-format
+msgid ""
+"\n"
+"STATIST --- Version %s\n"
+" (C) Dirk Melcher 1997-1999\n"
+" (C) Bernhard Reiter 1998-2009\n"
+" (C) Jakson Aquino 2005-2009\n"
+" STATIST comes with ABSOLUTELY NO WARRANTY; it is Free Software under GNU "
+"GPL.\n"
+" Read the file COPYING for details.\n"
+"\n"
+msgstr ""
+
+#: ../src/data.c:1712
+msgid ""
+"\n"
+"The option --xcols tells Statist to extract columns from a fixed width data "
+"file.\n"
+"\n"
+msgstr ""
+
+#: ../src/data.c:1876
+msgid ""
+"\n"
+"The option --xsample tells Statist to extract a random sample of\n"
+"rows from a given data file.\n"
+"\n"
+msgstr ""
+
+#: ../src/data.c:1714
+#, c-format
+msgid ""
+"\n"
+"Usage:\n"
+"%s --xcols config_file data_base dest_file\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:421
+msgid ""
+"\n"
+"done!\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:944
+msgid ""
+"\n"
+"t-Test with check value Tau:\n"
+msgstr ""
+
+#: ../src/procs.c:125 ../src/procs.c:1365 ../src/procs.c:1437
+msgid ""
+"\n"
+"t-Test:\n"
+msgstr ""
+
+#: ../src/procs.c:2034
+msgid ""
+"              x is different from y (-> two-sided test)\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:2899 ../src/procs.c:3193 ../src/procs.c:3198
+msgid "         ---  TABLE TRUNCATED  ---"
+msgstr ""
+
+#: ../src/menue.c:149 ../src/menue.c:290 ../src/menue.c:401 ../src/menue.c:567
+#: ../src/menue.c:745 ../src/menue.c:852
+msgid "   0 = Main menu\n"
+msgstr ""
+
+#: ../src/menue.c:83
+msgid "   0 = Quit\n"
+msgstr ""
+
+#: ../src/menue.c:84
+msgid "   1 = Data management\n"
+msgstr ""
+
+#: ../src/menue.c:402
+msgid "   1 = Linear regression and correlation\n"
+msgstr ""
+
+#: ../src/menue.c:568
+msgid "   1 = List data of columns\n"
+msgstr ""
+
+#: ../src/menue.c:746
+msgid "   1 = Log-transformation (base 10)\n"
+msgstr ""
+
+#: ../src/menue.c:853
+msgid "   1 = Save preferences\n"
+msgstr ""
+
+#: ../src/menue.c:150
+msgid "   1 = Standard deviation, mean, median, etc. \n"
+msgstr ""
+
+#: ../src/menue.c:291
+msgid "   1 = t-test for comparison of two means of two samples\n"
+msgstr ""
+
+#: ../src/menue.c:747
+msgid "   2 = Invert values (1/x)\n"
+msgstr ""
+
+#: ../src/menue.c:151
+msgid "   2 = Probit analysis\n"
+msgstr ""
+
+#: ../src/menue.c:569
+msgid "   2 = Read another file\n"
+msgstr ""
+
+#: ../src/menue.c:85
+msgid "   2 = Regressions and correlations\n"
+msgstr ""
+
+#: ../src/menue.c:403
+msgid "   2 = SPEARMAN rank-correlation-coefficient\n"
+msgstr ""
+
+#: ../src/menue.c:854
+msgid "   2 = Verbose"
+msgstr ""
+
+#: ../src/menue.c:292
+msgid "   2 = t-test for comparison of pairwise ascertained samples\n"
+msgstr ""
+
+#: ../src/menue.c:859
+msgid "   3 = Gnuplot graphics"
+msgstr ""
+
+#: ../src/menue.c:570
+msgid "   3 = List names of columns\n"
+msgstr ""
+
+#: ../src/menue.c:404
+msgid "   3 = Multiple linear correlation\n"
+msgstr ""
+
+#: ../src/menue.c:152
+msgid "   3 = Outliers & Box-Whisker-plot\n"
+msgstr ""
+
+#: ../src/menue.c:293
+msgid "   3 = Test of normal distribution (KS-Lilliefors-Test)\n"
+msgstr ""
+
+#: ../src/menue.c:86
+msgid "   3 = Tests\n"
+msgstr ""
+
+#: ../src/menue.c:748
+msgid "   3 = z-transformation [(x-mu)/sdv]\n"
+msgstr ""
+
+#: ../src/menue.c:864
+msgid "   4 = Beep at errors and warnings"
+msgstr ""
+
+#: ../src/menue.c:294
+msgid "   4 = Chi^2-fourfold-test\n"
+msgstr ""
+
+#: ../src/menue.c:87
+msgid "   4 = Miscellaneous\n"
+msgstr ""
+
+#: ../src/menue.c:405
+msgid "   4 = Partial linear correlation (maximum: 5 variables)\n"
+msgstr ""
+
+#: ../src/menue.c:153
+msgid "   4 = Percentiles\n"
+msgstr ""
+
+#: ../src/menue.c:571
+msgid "   4 = Rename column\n"
+msgstr ""
+
+#: ../src/menue.c:749
+msgid "   4 = Sort\n"
+msgstr ""
+
+#: ../src/menue.c:295
+msgid "   5 = Chi^2 two-items-test\n"
+msgstr ""
+
+#: ../src/menue.c:88
+msgid "   5 = Data manipulation\n"
+msgstr ""
+
+#: ../src/menue.c:154
+msgid "   5 = Frequency table\n"
+msgstr ""
+
+#: ../src/menue.c:869
+msgid "   5 = Histogram as text graphic instead of gnuplot-graphic"
+msgstr ""
+
+#: ../src/menue.c:750
+msgid "   5 = Join columns\n"
+msgstr ""
+
+#: ../src/menue.c:406
+msgid "   5 = Polynomial regression\n"
+msgstr ""
+
+#: ../src/menue.c:572
+msgid "   5 = Read column from terminal\n"
+msgstr ""
+
+#: ../src/menue.c:155
+msgid "   6 = Compare means\n"
+msgstr ""
+
+#: ../src/menue.c:751
+msgid "   6 = Exponentiation to base 10\n"
+msgstr ""
+
+#: ../src/menue.c:573
+msgid "   6 = Export columns as ASCII-data\n"
+msgstr ""
+
+#: ../src/menue.c:407
+msgid "   6 = Matrix of the linear correlation coefficients\n"
+msgstr ""
+
+#: ../src/menue.c:89
+msgid "   6 = Preferences\n"
+msgstr ""
+
+#: ../src/menue.c:874
+msgid "   6 = Special output changes from Bernhard"
+msgstr ""
+
+#: ../src/menue.c:296
+msgid "   6 = u-test (Test of independence of two samples)\n"
+msgstr ""
+
+#: ../src/menue.c:752
+msgid "   7 = Create columns for weighted mean\n"
+msgstr ""
+
+#: ../src/menue.c:574
+msgid "   7 = Export data base as fixed width data file\n"
+msgstr ""
+
+#: ../src/menue.c:297
+msgid "   7 = H-test (Kruskal-Wallis) for k independent samples\n"
+msgstr ""
+
+#: ../src/menue.c:408
+msgid "   7 = Matrix of SPEARMAN correlation coefficients\n"
+msgstr ""
+
+#: ../src/menue.c:879
+#, c-format
+msgid "   7 = Use system command \"%s\""
+msgstr ""
+
+#: ../src/menue.c:575
+msgid "   8 = File format options\n"
+msgstr ""
+
+#: ../src/menue.c:753
+msgid "   8 = Log-transformation (natural logarithm)\n"
+msgstr ""
+
+#: ../src/menue.c:409
+msgid "   8 = Point-biserial (linear) correlation\n"
+msgstr ""
+
+#: ../src/menue.c:158
+msgid "   8 = Save last gnuplot graphic as png\n"
+msgstr ""
+
+#: ../src/menue.c:884
+msgid "   8 = Use value labels"
+msgstr ""
+
+#: ../src/menue.c:298
+msgid "   8 = Wilcoxon-Rank-test for pairwise ascertained samples\n"
+msgstr ""
+
+#: ../src/menue.c:299
+msgid "   9 = Chi^2-test of equal frequency\n"
+msgstr ""
+
+#: ../src/menue.c:410
+msgid "   9 = Cross-validation of multiple linear regression\n"
+msgstr ""
+
+#: ../src/menue.c:160
+msgid "   9 = Enter gnuplot commands\n"
+msgstr ""
+
+#: ../src/menue.c:754
+msgid "   9 = Exponentiation to base 'e'\n"
+msgstr ""
+
+#: ../src/menue.c:889
+#, c-format
+msgid "   9 = Maximum number of rows before aborting table printing [%i]\n"
+msgstr ""
+
+#: ../src/statist.h:152
+msgid "   Error while reading with fgets: Unexpected end of file\n"
+msgstr ""
+
+#: ../src/statist.c:295
+msgid ""
+"   If you really want to load more than one file, please\n"
+"   choose the menu option:\n"
+"   'Data management | Read another file'\n"
+msgstr ""
+
+#: ../src/statist.c:527
+msgid "  --- Please, continue with <RETURN> ... ---"
+msgstr ""
+
+#: ../src/menue.c:300
+msgid ""
+"  10 = Chi^2-test of correspondence between measured and theoretical "
+"frequency\n"
+msgstr ""
+
+#: ../src/menue.c:411
+msgid "  10 = Randomization of multiple linear regression\n"
+msgstr ""
+
+#: ../src/menue.c:891
+#, c-format
+msgid "  10 = Screen number of columns [%i]\n"
+msgstr ""
+
+#: ../src/menue.c:892
+#, c-format
+msgid "  11 = Screen number of lines [%i]\n"
+msgstr ""
+
+#: ../src/procs.c:2336
+msgid "  Sum     |\n"
+msgstr ""
+
+#: ../src/statist.c:219
+msgid " Compiled with DEBUG.\n"
+msgstr ""
+
+#: ../src/statist.h:139
+msgid " Error while reading with fread: Unexpected end of file"
+msgstr ""
+
+#: ../src/statist.c:239
+#, c-format
+msgid " Hint: You can often answer \"%s\" for the number of columns.\n"
+msgstr ""
+
+#: ../src/procs.c:2331
+msgid " Item A   |                   Item B                 \n"
+msgstr ""
+
+#: ../src/statist.c:288
+msgid " More than one data file given!"
+msgstr ""
+
+#: ../src/statist.c:291
+msgid ""
+" More than one data file given!\n"
+"   Only the first one will be read."
+msgstr ""
+
+#: ../src/statist.h:124
+#, c-format
+msgid ""
+" System reports error while opening file %s:\n"
+"   %s"
+msgstr ""
+
+#: ../src/statist.h:156
+#, c-format
+msgid ""
+" System reports error while reading with fgets:\n"
+"   %s"
+msgstr ""
+
+#: ../src/statist.h:131
+#, c-format
+msgid ""
+" System reports error while writing with fwrite:\n"
+" %s"
+msgstr ""
+
+#: ../src/menue.c:858 ../src/menue.c:861 ../src/menue.c:866 ../src/menue.c:873
+#: ../src/menue.c:878 ../src/menue.c:883 ../src/menue.c:888
+msgid " [no]\n"
+msgstr ""
+
+#: ../src/menue.c:856 ../src/menue.c:863 ../src/menue.c:868 ../src/menue.c:871
+#: ../src/menue.c:876 ../src/menue.c:881 ../src/menue.c:886
+msgid " [yes]\n"
+msgstr ""
+
+#: ../src/data.c:153
+msgid " done\n"
+msgstr ""
+
+#: ../src/procs.c:279
+msgid " predicted"
+msgstr ""
+
+#: ../src/menue.c:446
+#, c-format
+msgid " x[%i] = Column %s\n"
+msgstr ""
+
+#: ../src/procs.c:2192
+msgid " |                   |  A existent   |  A not existent     |\n"
+msgstr ""
+
+#: ../src/procs.c:2194
+msgid " | B existent        |      a        |         b           |\n"
+msgstr ""
+
+#: ../src/procs.c:2195
+msgid " | B not existent    |      c        |         d           |\n"
+msgstr ""
+
+#: ../src/data.c:1906
+#, c-format
+msgid "\"%s\" is not a valid value for percentage."
+msgstr ""
+
+#: ../src/procs.c:1607
+msgid "#All values are equal!\n"
+msgstr ""
+
+#: ../src/procs.c:1605 ../src/procs.c:1716
+msgid "#Result general statistical information in a table\n"
+msgstr ""
+
+#: ../src/data.c:1254
+#, c-format
+msgid ""
+"%d rows with missing values were deleted for this analysis\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:2703
+#, c-format
+msgid "%i possible outliers deleted\n"
+msgstr ""
+
+#: ../src/data.c:1385 ../src/data.c:1423
+#, c-format
+msgid ""
+"%i values were less or equal to zero and were transformed into missing "
+"values!"
+msgstr ""
+
+#: ../src/data.c:479
+msgid "'#!' is an illegal indicator of a column of labels."
+msgstr ""
+
+#: ../src/statist.c:668
+#, c-format
+msgid ""
+"(Module %15s, line %i):\n"
+"  "
+msgstr ""
+
+#: ../src/menue.c:251
+msgid "(the first one will be taken as y-value)\n"
+msgstr ""
+
+#: ../src/data.c:1158
+msgid ""
+"---> Please, choose: <RETURN> to continue,\n"
+"     <Any letter> to stop, or a row number: "
+msgstr ""
+
+#: ../src/statist.c:476
+msgid ""
+"--bernhard      : special output changes from Bernhard, i.e.:\n"
+"                  - table output at Miscellaneous/Standard deviation\n"
+"                  - if --noplot defined no text histogram at\n"
+"                       Miscellaneous/Standard deviation\n"
+msgstr ""
+
+#: ../src/statist.c:463
+msgid "--color         : colorized output\n"
+msgstr ""
+
+#: ../src/statist.c:469
+msgid "--dec <char>    : decimal delimiter character (default: '.')\n"
+msgstr ""
+
+#: ../src/statist.c:466
+msgid "--header        : the file has column names in the first line\n"
+msgstr ""
+
+#: ../src/statist.c:454
+msgid "--help, -h, -?  : print this help message and exit\n"
+msgstr ""
+
+#: ../src/statist.c:465
+msgid "--labels <file> : read column titles and value labels from file\n"
+msgstr ""
+
+#: ../src/statist.c:457
+msgid "--log           : write results to log file `statist.log'\n"
+msgstr ""
+
+#: ../src/statist.c:470
+msgid ""
+"--na-string <string>\n"
+"                : indicator of missing values (default: \"M\")\n"
+msgstr ""
+
+#: ../src/statist.c:459
+msgid "--nobell        : no beep at errors and warnings\n"
+msgstr ""
+
+#: ../src/statist.c:458
+msgid "--nofile        : don't read a data file when starting the program\n"
+msgstr ""
+
+#: ../src/statist.c:467
+msgid "--noheader      : the file does not have column names\n"
+msgstr ""
+
+#: ../src/statist.c:461
+msgid "--noplot        : no gnuplot-graphic\n"
+msgstr ""
+
+#: ../src/statist.c:468
+msgid "--sep <char>    : field separator character\n"
+msgstr ""
+
+#: ../src/statist.c:455
+msgid ""
+"--silent, --quiet\n"
+"                : don't print menu etc. (for batch/script usage)\n"
+msgstr ""
+
+#: ../src/statist.c:460
+msgid ""
+"--thist         : histogram as text graphic instead of gnuplot-graphic\n"
+msgstr ""
+
+#: ../src/statist.c:472
+msgid ""
+"--xcols <conf_file> <orig_datafile> <new_data_file>\n"
+"                : extract columns from a fixed width data file\n"
+msgstr ""
+
+#: ../src/statist.c:474
+msgid ""
+"--xsample <percentage> <database> <dest_file>\n"
+"                : extract a sample of rows from a file\n"
+msgstr ""
+
+#: ../src/procs.c:1706
+#, c-format
+msgid "25%% quartile                   : %g\n"
+msgstr ""
+
+#: ../src/procs.c:1707
+#, c-format
+msgid "75%% quartile                   : %g\n"
+msgstr ""
+
+#: ../src/statist.c:657
+msgid "> statist-error "
+msgstr ""
+
+#: ../src/statist.c:661
+msgid "> statist-numerical error "
+msgstr ""
+
+#: ../src/statist.c:655 ../src/statist.c:663
+msgid "> statist-warning "
+msgstr ""
+
+#: ../src/procs.c:837
+msgid "All doses are equal!"
+msgstr ""
+
+#: ../src/procs.c:831
+msgid "All effect probabilities are equal!"
+msgstr ""
+
+#: ../src/procs.c:2431
+msgid ""
+"All value pairs are equal. WILCOXON-Test thus not possible/has no meaning."
+msgstr ""
+
+#: ../src/procs.c:1601 ../src/procs.c:2604
+msgid "All values are equal!"
+msgstr ""
+
+#: ../src/procs.c:1811
+msgid ""
+"Alpha > 0.1 ==> H0 can not be rejected\n"
+"\n"
+msgstr ""
+
+#: ../src/plot.c:93
+msgid "An invalid multibyte sequence was encountered in the input:"
+msgstr ""
+
+#: ../src/procs.c:2292
+msgid ""
+"Analysis of two-items table:\n"
+"\n"
+msgstr ""
+
+#: ../src/data.c:1040
+#, c-format
+msgid "At least %i columns have to be selected!"
+msgstr ""
+
+#: ../src/plot.c:688 ../src/plot.c:690
+msgid "Box-and-Whisker Plot"
+msgstr ""
+
+#: ../src/statist.c:730
+msgid "Broken pipe to gnuplot. Re-connecting."
+msgstr ""
+
+#: ../src/procs.c:1435
+#, c-format
+msgid "Calculated t-value      : %f \n"
+msgstr ""
+
+#: ../src/procs.c:394
+msgid "Calculating q^2 and r^2 of randomized vectors ..."
+msgstr ""
+
+#: ../src/procs.c:2151
+msgid "Calculation of Chi^2-distribution not possible since h<0!"
+msgstr ""
+
+#: ../src/procs.c:2547
+msgid "Calculation of probability not possible if n < 6!\n"
+msgstr ""
+
+#: ../src/procs.c:763
+#, c-format
+msgid "Can not calculate probit: dose %g count %g effect %g"
+msgstr ""
+
+#: ../src/procs.c:2166
+msgid ""
+"Characteristics are counted (1='existent', 0='not existent')\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:942
+#, c-format
+msgid "Check value Tau = %f\n"
+msgstr ""
+
+#: ../src/procs.c:1187 ../src/procs.c:1308 ../src/procs.c:2221
+#, c-format
+msgid "Chi^2 = %f\n"
+msgstr ""
+
+#: ../src/procs.c:1193 ../src/procs.c:1314
+msgid ""
+"Chi^2-Test of normal distribution not possible since degrees of freedom < "
+"1!\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:2131
+#, c-format
+msgid "Chi^2-distributed random variable H = %g\n"
+msgstr ""
+
+#: ../src/procs.c:2223 ../src/procs.c:2389
+msgid "Chi^2-test:\n"
+msgstr ""
+
+#: ../src/procs.c:939
+#, c-format
+msgid "Chi^2= %g\n"
+msgstr ""
+
+#: ../src/procs.c:2334 ../src/procs.c:2354
+#, c-format
+msgid "Class%3i  |"
+msgstr ""
+
+#: ../src/procs.c:523
+#, c-format
+msgid "Coefficient a%i = %15e\n"
+msgstr ""
+
+#: ../src/procs.c:1358
+#, c-format
+msgid "Coefficient of determination r^2      : %g \n"
+msgstr ""
+
+#: ../src/procs.c:1429
+#, c-format
+msgid "Coefficient of determination r^2     : %20.12e \n"
+msgstr ""
+
+#: ../src/procs.c:227 ../src/procs.c:284 ../src/procs.c:535
+#, c-format
+msgid "Coefficient of determination r^2 = %f\n"
+msgstr ""
+
+#: ../src/procs.c:2255
+#, c-format
+msgid "Column \"%s\", line %i, has value < 0"
+msgstr ""
+
+#: ../src/menue.c:612 ../src/menue.c:621
+#, c-format
+msgid "Column %2i = %s\n"
+msgstr ""
+
+#: ../src/menue.c:603
+#, c-format
+msgid "Column %2i: "
+msgstr ""
+
+#: ../src/data.c:688
+#, c-format
+msgid "Column %i = %s\n"
+msgstr ""
+
+#: ../src/data.c:1204
+#, c-format
+msgid "Column %i does not exist!"
+msgstr ""
+
+#: ../src/data.c:1603
+#, c-format
+msgid "Column %i is being read, stop input with '.'\n"
+msgstr ""
+
+#: ../src/data.c:1029
+#, c-format
+msgid "Column %s does not exist!"
+msgstr ""
+
+#: ../src/data.c:1292 ../src/data.c:1315
+#, c-format
+msgid "Column %s exists already!"
+msgstr ""
+
+#: ../src/data.c:1271
+#, c-format
+msgid "Column %s: %d data points\n"
+msgstr ""
+
+#: ../src/data.c:869
+#, c-format
+msgid "Column %s: %i\n"
+msgstr ""
+
+#: ../src/procs.c:214
+msgid "Column 'resi' updated!\n"
+msgstr ""
+
+#: ../src/data.c:977
+#, c-format
+msgid "Column for variable %i: "
+msgstr ""
+
+#: ../src/menue.c:649
+#, c-format
+msgid "Column name \"%s\" doesn't exist!"
+msgstr ""
+
+#: ../src/data.c:1014
+#, c-format
+msgid "Column name '%s' is not unique!"
+msgstr ""
+
+#: ../src/data.c:979
+msgid "Column name: "
+msgstr ""
+
+#: ../src/menue.c:63
+msgid "Columns have different number of entries!"
+msgstr ""
+
+#: ../src/procs.c:2172
+msgid "Columns must contain only 0's and 1's!"
+msgstr ""
+
+#: ../src/data.c:942 ../src/menue.c:625 ../src/menue.c:801
+msgid "Columns: "
+msgstr ""
+
+#: ../src/procs.c:3079
+#, c-format
+msgid "Comparison of means: %s\n"
+msgstr ""
+
+#: ../src/procs.c:930
+#, c-format
+msgid "Confidence range (95%%) for ED50: [%g, %g]\n"
+msgstr ""
+
+#: ../src/statist.c:558 ../src/statist.c:575
+msgid "Content of current directory:"
+msgstr ""
+
+#: ../src/procs.c:2222
+#, c-format
+msgid ""
+"Contingency coefficient r (according to HAMMING) = %f\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:755
+#, c-format
+msgid "Continue showing these math warnings? (%s) "
+msgstr ""
+
+#: ../src/procs.c:1160 ../src/procs.c:1279
+msgid ""
+"Correction according to YATES applied, since just 2 classes and n<200\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:2132
+#, c-format
+msgid "Correction term for equal ranks (ties) = %g\n"
+msgstr ""
+
+#: ../src/procs.c:2046
+#, c-format
+msgid "Correction term for equal ranks t = %f\n"
+msgstr ""
+
+#: ../src/procs.c:1357
+#, c-format
+msgid "Correlation coefficient r : %g \n"
+msgstr ""
+
+#: ../src/procs.c:228 ../src/procs.c:536 ../src/procs.c:941
+#, c-format
+msgid "Correlation coefficient r = %f\n"
+msgstr ""
+
+#: ../src/procs.c:1428
+#, c-format
+msgid "Correlation coefficient r: %20.12e \n"
+msgstr ""
+
+#: ../src/statist.c:1080
+msgid "Could not build the name of the preferences file!"
+msgstr ""
+
+#: ../src/data.c:637 ../src/data.c:640
+#, c-format
+msgid "Couldn't find data in file \"%s\"!"
+msgstr ""
+
+#: ../src/procs.c:1698
+#, c-format
+msgid "Count                          : %i\n"
+msgstr ""
+
+#: ../src/menue.c:713
+#, c-format
+msgid "Created file %s with %i columns!\n"
+msgstr ""
+
+#: ../src/procs.c:2706
+#, c-format
+msgid ""
+"Created new column %s having %i values!\n"
+"\n"
+msgstr ""
+
+#: ../src/data.c:1918
+#, c-format
+msgid ""
+"Creating a new database with a random sample of approximately\n"
+"%i%% of \"%s\" rows...\n"
+msgstr ""
+
+#: ../src/plot.c:37
+#, c-format
+msgid ""
+"Creating gnuplot command file '%s'\n"
+"\n"
+msgstr ""
+
+#: ../src/plot.c:34
+msgid ""
+"Creating gnuplot-graphic ...\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:2553
+msgid "Critical values for S (two-sided) from table:\n"
+msgstr ""
+
+#: ../src/funcs.c:597
+msgid "Critical values for d (two-sided):\n"
+msgstr ""
+
+#: ../src/procs.c:2754 ../src/procs.c:2848
+msgid "Cum. %"
+msgstr ""
+
+#: ../src/plot.c:451 ../src/plot.c:453
+msgid "Cumulative distribution"
+msgstr ""
+
+#: ../src/procs.c:1026
+#, c-format
+msgid "D (calculated)= %f\n"
+msgstr ""
+
+#: ../src/menue.c:566
+msgid ""
+"DATA MANAGEMENT: \n"
+"\n"
+msgstr ""
+
+#: ../src/menue.c:744
+msgid ""
+"DATA MANIPULATION: \n"
+"\n"
+msgstr ""
+
+#: ../src/data.c:1179
+#, c-format
+msgid "Data from column \"%s\":\n"
+msgstr ""
+
+#: ../src/data.c:1103
+msgid "Data from columns:\n"
+msgstr ""
+
+#: ../src/data.c:367
+#, c-format
+msgid "Decimal delimiter [%c]: "
+msgstr ""
+
+#: ../src/procs.c:1359
+#, c-format
+msgid "Degr. of freedom df = n-2 : %i \n"
+msgstr ""
+
+#: ../src/procs.c:234 ../src/procs.c:541
+#, c-format
+msgid "Degree of freedom f1 = %i\n"
+msgstr ""
+
+#: ../src/procs.c:235 ../src/procs.c:542
+#, c-format
+msgid "Degree of freedom f2 = %i\n"
+msgstr ""
+
+#: ../src/procs.c:940 ../src/procs.c:1188 ../src/procs.c:2133
+#, c-format
+msgid "Degrees of freedom = %i\n"
+msgstr ""
+
+#: ../src/procs.c:2384
+#, c-format
+msgid ""
+"Degrees of freedom = %i\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:1778
+#, c-format
+msgid ""
+"Degrees of freedom = n-2 = %i\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:1859
+#, c-format
+msgid "Degrees of freedom = n1 + n2 - 2 = %i\n"
+msgstr ""
+
+#: ../src/procs.c:1430
+#, c-format
+msgid "Degrees of freedom df = n-2 : %i \n"
+msgstr ""
+
+#: ../src/procs.c:1908
+#, c-format
+msgid "Degrees of freedom n-1 = %i\n"
+msgstr ""
+
+#: ../src/procs.c:1309
+#, c-format
+msgid "Degrees of freedom: %i\n"
+msgstr ""
+
+#: ../src/procs.c:2677
+#, c-format
+msgid "Delete outliers? (%s) "
+msgstr ""
+
+#: ../src/procs.c:1545
+#, c-format
+msgid "Discrete data with exactly %d classes!\n"
+msgstr ""
+
+#: ../src/statist.h:170 ../src/statist.h:179
+msgid "Division by 0!"
+msgstr ""
+
+#: ../src/data.c:349
+#, c-format
+msgid "Does the file contain the column names? (%s) "
+msgstr ""
+
+#: ../src/data.c:1852
+#, c-format
+msgid "Done: %d columns, %d rows.\n"
+msgstr ""
+
+#: ../src/data.c:1940
+#, c-format
+msgid "Done: selected %d out of %d rows.\n"
+msgstr ""
+
+#: ../src/procs.c:781
+#, c-format
+msgid "Dose %i <= 0!\n"
+msgstr ""
+
+#: ../src/plot.c:598
+#, c-format
+msgid "Dose %s"
+msgstr ""
+
+#: ../src/plot.c:600
+#, c-format
+msgid "Effect %s [%%]"
+msgstr ""
+
+#: ../src/statist.c:566
+#, c-format
+msgid "Error while running the command \"%s\"."
+msgstr ""
+
+#: ../src/procs.c:2081
+msgid "Error: n!=k\n"
+msgstr ""
+
+#: ../src/procs.c:1363
+#, c-format
+msgid "Estimated t-value         : %f\n"
+msgstr ""
+
+#: ../src/data.c:1819
+#, c-format
+msgid "Extracting columns from \"%s\" to \"%s\"...\n"
+msgstr ""
+
+#: ../src/procs.c:246 ../src/procs.c:553
+msgid ""
+"F-Test not possible since r = 1\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:540
+#, c-format
+msgid "F-value = %f\n"
+msgstr ""
+
+#: ../src/data.c:387
+#, c-format
+msgid "Field separator ( \\t,;)[%s]: "
+msgstr ""
+
+#: ../src/menue.c:966 ../src/statist.c:324 ../src/statist.c:375
+#, c-format
+msgid "File \"%s\" not found!"
+msgstr ""
+
+#: ../src/data.c:890
+#, c-format
+msgid "File \"%s\" not found!\n"
+msgstr ""
+
+#: ../src/data.c:2002 ../src/data.c:2036 ../src/statist.c:1231
+#, c-format
+msgid "File \"%s\" saved!"
+msgstr ""
+
+#: ../src/menue.c:502 ../src/procs.c:1399
+msgid "First column must contain only 0's and 1's!"
+msgstr ""
+
+#: ../src/data.c:429
+#, c-format
+msgid "First lines of \"%s\":"
+msgstr ""
+
+#: ../src/menue.c:436 ../src/menue.c:510 ../src/menue.c:527
+msgid "First selected column will be taken as y-value!"
+msgstr ""
+
+#: ../src/procs.c:2191
+msgid ""
+"Fourfold-table:\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:2839
+#, c-format
+msgid "Frequencies: %s\n"
+msgstr ""
+
+#: ../src/plot.c:500 ../src/plot.c:554
+msgid "Frequency"
+msgstr ""
+
+#: ../src/procs.c:2383
+#, c-format
+msgid "G (check value for Chi^2-Test) = %f\n"
+msgstr ""
+
+#: ../src/procs.c:478
+msgid "Gauss-Elimination: No possible solution!"
+msgstr ""
+
+#: ../src/funcs.c:675
+msgid "Gauss-Elimination: No solution exists!"
+msgstr ""
+
+#: ../src/procs.c:1033
+#, c-format
+msgid "H0 accepted with a significance level of %i%%\n"
+msgstr ""
+
+#: ../src/procs.c:2575
+msgid ""
+"H0 can not be rejected\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:1036
+msgid "H0 rejected\n"
+msgstr ""
+
+#: ../src/procs.c:1807
+#, c-format
+msgid ""
+"H0 rejected at a level of significance of %4.2f\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:2571
+#, c-format
+msgid ""
+"H0 rejected at level of significance of %i%% (two-sided)\n"
+"\n"
+msgstr ""
+
+#: ../src/plot.c:496 ../src/plot.c:498 ../src/plot.c:550 ../src/plot.c:552
+msgid "Histogram"
+msgstr ""
+
+#: ../src/procs.c:545
+msgid "Hypothesis H0:  r=0  against hypothesis H1: r>0 or r<0\n"
+msgstr ""
+
+#: ../src/procs.c:2224 ../src/procs.c:2390
+msgid "Hypothesis H0: Both items are independent (uncorrelated)\n"
+msgstr ""
+
+#: ../src/procs.c:945
+msgid "Hypothesis H0: Correlation according to probit-model exists\n"
+msgstr ""
+
+#: ../src/procs.c:1020
+msgid "Hypothesis H0: Data is normally distributed versus\n"
+msgstr ""
+
+#: ../src/procs.c:1183
+msgid "Hypothesis H0: Values have equal frequency\n"
+msgstr ""
+
+#: ../src/procs.c:1366
+msgid "Hypothesis H0: r = 0  against hypothesis H1: r1 # 0  (->two-sided)\n"
+msgstr ""
+
+#: ../src/procs.c:1438
+msgid "Hypothesis H0: r = 0  versus hypothesis H1: r1 # 0  (->two-sided)\n"
+msgstr ""
+
+#: ../src/procs.c:126
+msgid ""
+"Hypothesis H0: r12_3 = 0  against hypothesis H1: r12_3 # 0  (->two sided)\n"
+msgstr ""
+
+#: ../src/procs.c:238
+msgid "Hypothesis H0: r=0  against hypothesis H1: r#0 \n"
+msgstr ""
+
+#: ../src/procs.c:953
+msgid "Hypothesis H0: r=0  vs. H1: r#0\n"
+msgstr ""
+
+#: ../src/procs.c:1780
+msgid "Hypothesis H0: rho=0 versus hypothesis H1: rho#0 (->two-sided)\n"
+msgstr ""
+
+#: ../src/procs.c:2543
+msgid "Hypothesis H0: x and y are 'treated' equally versus\n"
+msgstr ""
+
+#: ../src/procs.c:1304
+msgid "Hypothesis H0: x and y are equally distributed\n"
+msgstr ""
+
+#: ../src/procs.c:1021
+msgid ""
+"Hypothesis H1: Data is not normally distributed\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:2136
+msgid "Hypothesis H1: Samples do not originate from the same set\n"
+msgstr ""
+
+#: ../src/procs.c:1184
+msgid ""
+"Hypothesis H1: Values don't have equal frequencies\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:2544
+msgid ""
+"Hypothesis H1: x and y are 'treated' unequally (-> two-sided)\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:1305
+msgid "Hypothesis H1: x and y are not equally distributed\n"
+msgstr ""
+
+#: ../src/procs.c:2029
+msgid "Hypothesis H1: x stochastically larger than y (-> one-sided test) or\n"
+msgstr ""
+
+#: ../src/procs.c:2032
+msgid "Hypothesis H1: x stochastically smaller than y (-> one-sided test) or\n"
+msgstr ""
+
+#: ../src/data.c:835 ../src/data.c:838
+#, c-format
+msgid "Illegal format of value '%s' in line %i!"
+msgstr ""
+
+#: ../src/data.c:736 ../src/data.c:740
+#, c-format
+msgid ""
+"Illegal format of value '%s' in line %i!\n"
+"Couldn't read file %s!"
+msgstr ""
+
+#: ../src/data.c:1620
+msgid "Illegal input, please repeat: "
+msgstr ""
+
+#: ../src/menue.c:134 ../src/menue.c:272 ../src/menue.c:383 ../src/menue.c:546
+#: ../src/menue.c:725 ../src/menue.c:831 ../src/menue.c:1017
+msgid "Illegal instruction!"
+msgstr ""
+
+#: ../src/statist.c:516
+#, c-format
+msgid "Illegal option: '%s'. Try -h for help."
+msgstr ""
+
+#: ../src/menue.c:476
+msgid "Illegal order or x- and y-columns have different number of values!"
+msgstr ""
+
+#: ../src/menue.c:595
+#, c-format
+msgid "Include value labels? (%s) "
+msgstr ""
+
+#: ../src/procs.c:1355
+#, c-format
+msgid "Intersection a0           : %g \n"
+msgstr ""
+
+#: ../src/data.c:376 ../src/statist.c:340 ../src/statist.c:343
+#, c-format
+msgid "Invalid decimal delimiter: '%c'. Please, choose either ',' or '.'"
+msgstr ""
+
+#: ../src/plot.c:66
+#, c-format
+msgid "Invalid encoding specification: \"%s\""
+msgstr ""
+
+#: ../src/data.c:400 ../src/statist.c:352 ../src/statist.c:354
+#, c-format
+msgid "Invalid field separator: '%c'"
+msgstr ""
+
+#: ../src/menue.c:49
+msgid "Invalid number!"
+msgstr ""
+
+#: ../src/procs.c:927
+msgid "Inverse probit curve due to negative slope a1!!!"
+msgstr ""
+
+#: ../src/plot.c:401 ../src/plot.c:403
+msgid "KS-Lilliefors-Test"
+msgstr ""
+
+#: ../src/data.c:491
+#, c-format
+msgid "Label in column %i='%s'\n"
+msgstr ""
+
+#: ../src/plot.c:765
+msgid ""
+"Last commands sent to gnuplot:\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:802
+msgid "Less than 2 valid dose-effect pairs!"
+msgstr ""
+
+#: ../src/plot.c:304 ../src/plot.c:306
+msgid "Linear Regression"
+msgstr ""
+
+#: ../src/data.c:1863
+msgid "List of columns with non-numeric values:\n"
+msgstr ""
+
+#: ../src/statist.c:362
+msgid ""
+"Load file using menu option\n"
+"Data management | Read another file\n"
+msgstr ""
+
+#: ../src/funcs.c:532
+msgid "Log argument < 0!"
+msgstr ""
+
+#: ../src/menue.c:82
+msgid ""
+"MAIN MENU: \n"
+"\n"
+msgstr ""
+
+#: ../src/menue.c:148
+msgid ""
+"MISCELLANEOUS: \n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:659
+msgid "Matrix of SPEARMAN'S Rank-Correlation-Coefficients\n"
+msgstr ""
+
+#: ../src/procs.c:591
+msgid ""
+"Matrix of linear correlation of variables:\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:1712
+#, c-format
+msgid ""
+"Maximum                        : %g\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:1699
+#, c-format
+msgid "Mean                           : %g  [%g, %g] (95%%)\n"
+msgstr ""
+
+#: ../src/procs.c:1029
+#, c-format
+msgid "Mean = %g\n"
+msgstr ""
+
+#: ../src/procs.c:2537
+#, c-format
+msgid "Mean of differences   : %g +/- %g\n"
+msgstr ""
+
+#: ../src/procs.c:1701
+#, c-format
+msgid "Median                         : %g  [%g, %g] (95%%)\n"
+msgstr ""
+
+#: ../src/procs.c:2539
+#, c-format
+msgid ""
+"Median of differences : %f [%f, %f] (99%%)\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:1711
+#, c-format
+msgid "Minimum                        : %g\n"
+msgstr ""
+
+#: ../src/procs.c:1628
+msgid "Minimum is larger than maximum!"
+msgstr ""
+
+#: ../src/procs.c:2790 ../src/procs.c:2791
+msgid "Missing"
+msgstr ""
+
+#: ../src/statist.c:481
+#, c-format
+msgid "Missing values must be indicated by '%s'\n"
+msgstr ""
+
+#: ../src/menue.c:186
+#, c-format
+msgid "More than %i classes not allowed!"
+msgstr ""
+
+#: ../src/plot.c:345 ../src/plot.c:347
+msgid "Multiple Linear Regression"
+msgstr ""
+
+#: ../src/procs.c:2751 ../src/procs.c:2843 ../src/procs.c:3106
+#: ../src/procs.c:3110
+msgid "N"
+msgstr ""
+
+#: ../src/data.c:657
+#, c-format
+msgid "Name of column %d doesn't begin with an ascii letter: \"%s\"."
+msgstr ""
+
+#: ../src/data.c:883 ../src/statist.c:313
+msgid "Name of data file: "
+msgstr ""
+
+#: ../src/menue.c:959
+msgid "Name of file with labels: "
+msgstr ""
+
+#: ../src/procs.c:2532
+#, c-format
+msgid "Negative rank sum S-  : %g\n"
+msgstr ""
+
+#: ../src/data.c:1301
+#, c-format
+msgid "New column %s created!\n"
+msgstr ""
+
+#: ../src/statist.c:316
+msgid "No data file given. "
+msgstr ""
+
+#: ../src/menue.c:954
+#, c-format
+msgid ""
+"No file with labels was loaded yet.\n"
+"Do you want to load one now? (%s) "
+msgstr ""
+
+#: ../src/data.c:1339
+msgid "No label found for column!"
+msgstr ""
+
+#: ../src/data.c:340
+#, c-format
+msgid "No labels found in \"%s\"!"
+msgstr ""
+
+#: ../src/data.c:1353
+msgid "No name found for column!"
+msgstr ""
+
+#: ../src/menue.c:37
+msgid "No valid number!"
+msgstr ""
+
+#: ../src/data.c:519 ../src/data.c:520
+msgid "No variables found in comment!"
+msgstr ""
+
+#: ../src/data.c:1862
+msgid "Non-numeric values were found."
+msgstr ""
+
+#: ../src/procs.c:2045
+#, c-format
+msgid "Normally distributed random variable   z = %f\n"
+msgstr ""
+
+#: ../src/memory_handling.c:39 ../src/memory_handling.c:52
+#: ../src/memory_handling.c:66
+msgid "Not enough memory. Terminating!"
+msgstr ""
+
+#: ../src/procs.c:2536
+#, c-format
+msgid "Number 0-differences  : %i\n"
+msgstr ""
+
+#: ../src/menue.c:178
+msgid "Number of classes (0 or RETURN for auto): "
+msgstr ""
+
+#: ../src/data.c:753 ../src/data.c:757
+#, c-format
+msgid "Number of columns (%d) does not equal number of labels (%d)!"
+msgstr ""
+
+#: ../src/procs.c:1027
+#, c-format
+msgid "Number of data = %i\n"
+msgstr ""
+
+#: ../src/procs.c:1427
+#, c-format
+msgid "Number of data points n  : %i \n"
+msgstr ""
+
+#: ../src/procs.c:230
+#, c-format
+msgid "Number of data points n = %i\n"
+msgstr ""
+
+#: ../src/procs.c:2534
+#, c-format
+msgid "Number of value pairs : %i\n"
+msgstr ""
+
+#: ../src/menue.c:785
+#, c-format
+msgid "Number of values in column %s: %i\n"
+msgstr ""
+
+#: ../src/procs.c:75
+msgid "One constant correlation:"
+msgstr ""
+
+#: ../src/data.c:699
+msgid "One valid column name found!"
+msgstr ""
+
+#: ../src/funcs.c:196
+msgid "One value could not be found!"
+msgstr ""
+
+#: ../src/data.c:1382 ../src/data.c:1420
+msgid ""
+"One value was less or equal to zero and was transformed into missing value!"
+msgstr ""
+
+#: ../src/statist.c:453
+msgid "Options:\n"
+msgstr ""
+
+#: ../src/procs.c:2667
+#, c-format
+msgid "Outliers:  x[%i]=%f\n"
+msgstr ""
+
+#: ../src/menue.c:851
+msgid ""
+"PREFERENCES: \n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:1062
+#, c-format
+msgid "Percentiles for column \"%s\"\n"
+msgstr ""
+
+#: ../src/procs.c:2040 ../src/procs.c:2141
+#, c-format
+msgid ""
+"Please check exact probability of alpha for h having %i degrees of freedom\n"
+msgstr ""
+
+#: ../src/menue.c:191
+msgid "Please enter a meaningful number of classes!"
+msgstr ""
+
+#: ../src/plot.c:246
+msgid "Please enter a name for the png file: "
+msgstr ""
+
+#: ../src/menue.c:638
+msgid "Please enter name for the column: "
+msgstr ""
+
+#: ../src/menue.c:631
+msgid "Please enter name of column: "
+msgstr ""
+
+#: ../src/data.c:1984 ../src/menue.c:665
+msgid "Please enter name of the export file: "
+msgstr ""
+
+#: ../src/data.c:1987
+msgid "Please enter name of the list of columns file: "
+msgstr ""
+
+#: ../src/data.c:891
+msgid "Please enter new file name: "
+msgstr ""
+
+#: ../src/menue.c:538
+msgid "Please enter number of randomizations: "
+msgstr ""
+
+#: ../src/menue.c:467
+#, c-format
+msgid "Please enter order of regression polynom (max. %i): "
+msgstr ""
+
+#: ../src/data.c:1439 ../src/data.c:1466
+msgid "Please select column for exponentiation\n"
+msgstr ""
+
+#: ../src/data.c:1497
+msgid "Please select column for inversion\n"
+msgstr ""
+
+#: ../src/data.c:1362 ../src/data.c:1400
+msgid "Please select column for log-transformation\n"
+msgstr ""
+
+#: ../src/data.c:1529
+msgid "Please select column for z-transformation\n"
+msgstr ""
+
+#: ../src/data.c:1563
+msgid "Please select column to be sorted\n"
+msgstr ""
+
+#: ../src/menue.c:806
+msgid "Please select column with values and column with factors:\n"
+msgstr ""
+
+#: ../src/menue.c:214
+msgid "Please select columns containing dose and effect data\n"
+msgstr ""
+
+#: ../src/menue.c:226
+msgid "Please select columns containing dose, number, effect data\n"
+msgstr ""
+
+#: ../src/menue.c:463
+msgid ""
+"Please select columns for x- and y-values (variable 1 = x, variable 2 = y)\n"
+"\n"
+msgstr ""
+
+#: ../src/menue.c:250
+msgid "Please select columns to compare means,\n"
+msgstr ""
+
+#: ../src/menue.c:973 ../src/menue.c:987 ../src/menue.c:1002
+msgid "Please, choose a new value: "
+msgstr ""
+
+#: ../src/data.c:986
+#, c-format
+msgid "Please, choose at most %i columns!"
+msgstr ""
+
+#: ../src/statist.c:683 ../src/statist.c:745
+msgid ""
+"Please, report bugs to: statist-list@intevation.de\n"
+"\n"
+msgstr ""
+
+#: ../src/plot.c:741
+#, c-format
+msgid "Polynomial Regression of Order %i"
+msgstr ""
+
+#: ../src/procs.c:2531
+#, c-format
+msgid "Positive rank sum S+  : %g\n"
+msgstr ""
+
+#: ../src/procs.c:2147
+#, c-format
+msgid ""
+"Probability alpha for H0 = %6.4f\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:2048 ../src/procs.c:2585
+#, c-format
+msgid "Probability of H0 (one-sided) = %6.4f\n"
+msgstr ""
+
+#: ../src/procs.c:2050 ../src/procs.c:2586
+#, c-format
+msgid ""
+"Probability of H0 (two-sided) = %6.4f\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:129 ../src/procs.c:1368 ../src/procs.c:1440
+#: ../src/procs.c:1825 ../src/procs.c:1865 ../src/procs.c:1914
+#, c-format
+msgid ""
+"Probability of H0 = %6.4f\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:243 ../src/procs.c:550 ../src/procs.c:955
+#: ../src/procs.c:1190 ../src/procs.c:1311 ../src/procs.c:2227
+#: ../src/procs.c:2393
+#, c-format
+msgid ""
+"Probability of H0: %6.4f\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:947
+#, c-format
+msgid "Probability of H0: %f\n"
+msgstr ""
+
+#: ../src/plot.c:603 ../src/plot.c:605
+msgid "Probit analysis"
+msgstr ""
+
+#: ../src/menue.c:400
+msgid ""
+"REGRESSION & CORRELATION: \n"
+"\n"
+msgstr ""
+
+#: ../src/data.c:767
+#, c-format
+msgid "Reading %i columns ...\n"
+msgstr ""
+
+#: ../src/statist.c:743
+msgid "Received signal SIGTERM (Ctrl-C?). Terminating!"
+msgstr ""
+
+#: ../src/procs.c:159
+msgid "Regressed equation: y = B[0] + B[1]*x[1] + B[2]*x[2] +...+"
+msgstr ""
+
+#: ../src/procs.c:530
+msgid ""
+"Regressed equation: y = a0 + a1*x + a2*x^2 +...+ an*x^n\n"
+"\n"
+msgstr ""
+
+#: ../src/data.c:132
+msgid "Removing temporary files ..."
+msgstr ""
+
+#: ../src/procs.c:1181 ../src/procs.c:1302
+msgid "Result Chi^2-Test of equal frequency:\n"
+msgstr ""
+
+#: ../src/procs.c:1024
+msgid "Result KS-Lilliefors-Test on normal distribution:\n"
+msgstr ""
+
+#: ../src/procs.c:923
+msgid "Result probit analysis:\n"
+msgstr ""
+
+#: ../src/data.c:851 ../src/data.c:855
+#, c-format
+msgid "Row %i contains just %i instead of %i columns!"
+msgstr ""
+
+#: ../src/menue.c:211
+#, c-format
+msgid "Set number to 100 (--> percent? ) %s "
+msgstr ""
+
+#: ../src/data.c:1593
+#, c-format
+msgid "Shall all data be deleted? (%s) "
+msgstr ""
+
+#: ../src/data.c:899
+#, c-format
+msgid "Shall the old data be removed? (%s) "
+msgstr ""
+
+#: ../src/statist.c:737
+msgid ""
+"Signal from operating system: floating point exception\n"
+"\t\tDivision by zero? Terminating!"
+msgstr ""
+
+#: ../src/procs.c:1821
+msgid "Significance checked using the normal distribution\n"
+msgstr ""
+
+#: ../src/procs.c:2535
+#, c-format
+msgid "Size of the set       : %i\n"
+msgstr ""
+
+#: ../src/procs.c:1356
+#, c-format
+msgid "Slope a1                  : %g \n"
+msgstr ""
+
+#: ../src/procs.c:2533
+#, c-format
+msgid "Smallest rank sum S   : %g\n"
+msgstr ""
+
+#: ../src/statist.c:334
+#, c-format
+msgid ""
+"Source file = %s\n"
+"\n"
+msgstr ""
+
+#: ../src/statist.h:189 ../src/statist.h:199
+msgid "Square root with negative argument!"
+msgstr ""
+
+#: ../src/procs.c:1708
+#, c-format
+msgid "Standard deviation             : %g\n"
+msgstr ""
+
+#: ../src/procs.c:1030
+#, c-format
+msgid "Standard deviation = %g\n"
+msgstr ""
+
+#: ../src/procs.c:229 ../src/procs.c:537
+#, c-format
+msgid "Standard deviation s = %f\n"
+msgstr ""
+
+#: ../src/procs.c:1710
+#, c-format
+msgid "Standard error of mean         : %g\n"
+msgstr ""
+
+#: ../src/procs.c:370
+msgid "Starting with randomization of y-vector. Please be patient ...\n"
+msgstr ""
+
+#: ../src/statist.c:485
+#, c-format
+msgid "Statist documentation can be found at: %s\n"
+msgstr ""
+
+#: ../src/data.c:575
+msgid ""
+"Statist failed to open the file. Perhaps it\n"
+"didn't detect the file format correctly.\n"
+msgstr ""
+
+#: ../src/procs.c:2315
+msgid "Sum of all values of all columns is lower than 0"
+msgstr ""
+
+#: ../src/procs.c:2297
+#, c-format
+msgid "Sum of values of column \"%s\" is lower than 0"
+msgstr ""
+
+#: ../src/procs.c:2307
+#, c-format
+msgid "Sum of values of row %i is lower than 0"
+msgstr ""
+
+#: ../src/statist.h:164
+#, c-format
+msgid ""
+"System reports error while attempting to close file:\n"
+"  %s"
+msgstr ""
+
+#: ../src/data.c:93
+#, c-format
+msgid ""
+"System reports error while opening temporary file:\n"
+"  \"%s\""
+msgstr ""
+
+#: ../src/statist.h:143
+#, c-format
+msgid ""
+"System reports error while reading with fread:\n"
+" %s"
+msgstr ""
+
+#: ../src/menue.c:289
+msgid ""
+"TESTS:\n"
+"\n"
+msgstr ""
+
+#: ../src/plot.c:776
+msgid ""
+"Terminate gnuplot commands with '.'\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:1140 ../src/procs.c:1261
+#, c-format
+msgid "Test aborted: There are more than %i classes of frequency."
+msgstr ""
+
+#: ../src/procs.c:1783
+msgid ""
+"Test not possible since n<5 (too few values!)\n"
+"\n"
+msgstr ""
+
+#: ../src/data.c:1044 ../src/menue.c:258
+msgid "The columns must have the same number of data points for this analysis!"
+msgstr ""
+
+#: ../src/data.c:1954
+msgid "The current data file has less than 2 columns!"
+msgstr ""
+
+#: ../src/menue.c:980 ../src/menue.c:994 ../src/menue.c:1009
+#, c-format
+msgid "The number must be bigger than %i\n"
+msgstr ""
+
+#: ../src/statist.c:505
+#, c-format
+msgid ""
+"The option short format %s is deprecated\n"
+"  and might be removed some time in the future.\n"
+"  Use -%s instead."
+msgstr ""
+
+#: ../src/procs.c:2346
+#, c-format
+msgid "There are %i rows to be printed yet. Do you want to see them? (%s) "
+msgstr ""
+
+#: ../src/data.c:1960
+msgid "There are columns with different number of rows!"
+msgstr ""
+
+#: ../src/data.c:937
+#, c-format
+msgid ""
+"This analysis requires at least %i columns,\n"
+"  %s"
+msgstr ""
+
+#: ../src/procs.c:115
+msgid "Three constant correlations:"
+msgstr ""
+
+#: ../src/data.c:812 ../src/data.c:815
+#, c-format
+msgid "Too many columns in row %i. (%d columns)"
+msgstr ""
+
+#: ../src/statist.c:209
+msgid "Too many options"
+msgstr ""
+
+#: ../src/procs.c:92
+msgid "Two constant correlations:"
+msgstr ""
+
+#: ../src/statist.c:839
+#, c-format
+msgid "Unknown color name \"%s\" in file \"%s\"."
+msgstr ""
+
+#: ../src/data.c:1878
+#, c-format
+msgid ""
+"Usage:\n"
+"\n"
+"  %s --xsample percentage data_base dest_file\n"
+"\n"
+"where \"percentage\" is an integer between 1 and 99.\n"
+"\n"
+msgstr ""
+
+#: ../src/statist.c:451
+msgid ""
+"Usage:\n"
+"  statist [ options ] data_file\n"
+msgstr ""
+
+#: ../src/procs.c:2208
+msgid ""
+"Using according to YATES corrected Chi^2 value, since frequencies <= 5 "
+"expected!\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:2755 ../src/procs.c:2850
+msgid "V. Cum. %"
+msgstr ""
+
+#: ../src/procs.c:2753 ../src/procs.c:2846
+msgid "Valid %"
+msgstr ""
+
+#: ../src/data.c:701
+msgid "Valid column names found!"
+msgstr ""
+
+#: ../src/procs.c:2750 ../src/procs.c:2841
+msgid "Value"
+msgstr ""
+
+#: ../src/data.c:1610
+#, c-format
+msgid "Value %i: "
+msgstr ""
+
+#: ../src/procs.c:2183
+msgid ""
+"Values are being interpreted as fourfold-table:\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:592 ../src/procs.c:661
+msgid "Variable     "
+msgstr ""
+
+#: ../src/data.c:1278
+#, c-format
+msgid "Variable %i = Column %s\n"
+msgstr ""
+
+#: ../src/menue.c:374
+msgid "Variable 1 (x) = measured distribution\n"
+msgstr ""
+
+#: ../src/menue.c:375
+msgid ""
+"Variable 2 (y) = expected (theoretical) distribution\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:286
+#, c-format
+msgid "Variance of prediction q^2 = %f\n"
+msgstr ""
+
+#: ../src/procs.c:1709
+#, c-format
+msgid "Variation coefficient          : %f %%\n"
+msgstr ""
+
+#: ../src/procs.c:2386
+msgid ""
+"Warning: Expected frequencies < 5!\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:1162 ../src/procs.c:1281
+msgid ""
+"Warning: FISCHER-Test shouldn't be applied,\n"
+"\tsince number of values <25\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:2039 ../src/procs.c:2140
+msgid "Warning: Only rough approximation of probability possible!\n"
+msgstr ""
+
+#: ../src/procs.c:1149 ../src/procs.c:1270
+msgid ""
+"Warning: This test shouldn't be applied,\n"
+"\tsince there are frequencies <= 5!\n"
+"\n"
+msgstr ""
+
+#: ../src/data.c:405
+#, c-format
+msgid "What string indicates missing values? [%s]: "
+msgstr ""
+
+#: ../src/data.c:577
+#, c-format
+msgid "Would you like to set the file format? (%s) "
+msgstr ""
+
+#: ../src/data.c:354 ../src/data.c:903 ../src/data.c:1597 ../src/menue.c:213
+#: ../src/menue.c:597 ../src/menue.c:957 ../src/procs.c:757
+#: ../src/procs.c:2349 ../src/procs.c:2679
+msgid "Y"
+msgstr ""
+
+#: ../src/data.c:577
+msgid "Y/n"
+msgstr ""
+
+#: ../src/statist.h:62
+msgid "all"
+msgstr ""
+
+#: ../src/data.c:933
+msgid "but this data file has just 1 column!"
+msgstr ""
+
+#: ../src/data.c:935
+#, c-format
+msgid "but this data file has only %i columns!"
+msgstr ""
+
+#: ../src/procs.c:787
+#, c-format
+msgid "dose=%6g  num=%g effect=%2f prop=%4.2f probit=%5.2f\n"
+msgstr ""
+
+#: ../src/procs.c:961
+#, c-format
+msgid "doselab=|%s|, effectlab=|%s|\n"
+msgstr ""
+
+#: ../src/procs.c:2359
+msgid "exp. frq. |"
+msgstr ""
+
+#: ../src/procs.c:2219
+#, c-format
+msgid "expected: a=%4.2f,  b=%4.2f,  c=%4.2f,  d=%4.2f,  n=%i\n"
+msgstr ""
+
+#: ../src/plot.c:191 ../src/plot.c:201
+msgid "gnuplot-initialization failed!"
+msgstr ""
+
+#: ../src/procs.c:2042 ../src/procs.c:2143
+msgid ""
+"in the literature, e.g. in Table 16/17, pp. 599 in WEBER \n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:3032 ../src/procs.c:3108
+msgid "mean"
+msgstr ""
+
+#: ../src/data.c:360 ../src/data.c:582
+msgid "n"
+msgstr ""
+
+#: ../src/procs.c:2583
+#, c-format
+msgid "normally distributed variable z = %f\n"
+msgstr ""
+
+#: ../src/procs.c:1354
+#, c-format
+msgid "number of data points n   : %i \n"
+msgstr ""
+
+#: ../src/procs.c:2217
+#, c-format
+msgid "observed: a=%lu,  b=%lu,  c=%lu,  d=%lu,  n=%i\n"
+msgstr ""
+
+#: ../src/procs.c:660
+msgid ""
+"of the variables:\n"
+"\n"
+msgstr ""
+
+#: ../src/procs.c:285
+#, c-format
+msgid "r^2 of regression y versus y_pred = %f\n"
+msgstr ""
+
+#: ../src/procs.c:1777
+#, c-format
+msgid "rho = %f\n"
+msgstr ""
+
+#: ../src/procs.c:3033 ../src/procs.c:3109
+msgid "sdev"
+msgstr ""
+
+#: ../src/procs.c:1868 ../src/procs.c:1917
+msgid "t-Test not possible since t = 0!\n"
+msgstr ""
+
+#: ../src/procs.c:1370 ../src/procs.c:1442
+msgid "t-Test not possible since |r| = 1!\n"
+msgstr ""
+
+#: ../src/procs.c:950
+msgid "t-Test with Tau not possible since Tau = 0\n"
+msgstr ""
+
+#: ../src/procs.c:3029 ../src/procs.c:3105
+msgid "value"
+msgstr ""
+
+#: ../src/procs.c:2225 ../src/procs.c:2391
+msgid "versus H1: Both items are dependent (correlated)\n"
+msgstr ""
+
+#: ../src/menue.c:536
+#, c-format
+msgid "x[%i] = Column %s\n"
+msgstr ""
+
+#: ../src/menue.c:519
+#, c-format
+msgid "x[%i] = column %s\n"
+msgstr ""
+
+#: ../src/data.c:354 ../src/data.c:903 ../src/data.c:1597 ../src/menue.c:213
+#: ../src/menue.c:597 ../src/menue.c:957 ../src/procs.c:757
+#: ../src/procs.c:2349 ../src/procs.c:2679
+msgid "y"
+msgstr ""
+
+#: ../src/menue.c:443 ../src/menue.c:534
+#, c-format
+msgid "y = Column %s\n"
+msgstr ""
+
+#: ../src/menue.c:517
+#, c-format
+msgid "y = column %s\n"
+msgstr ""
+
+#: ../src/data.c:899 ../src/data.c:1593 ../src/menue.c:211 ../src/menue.c:595
+#: ../src/menue.c:955 ../src/procs.c:755 ../src/procs.c:2347
+#: ../src/procs.c:2677
+msgid "y/N"
+msgstr ""
+
+#: ../src/data.c:349
+msgid "y/n"
+msgstr ""

@@ -1,0 +1,19 @@
+
+  The two sed programs "DE_delAccents.sed" and "delAccents.sed"
+  are useful if you are running statist in a language other than
+  English and can't put the accents to be correctly displayed on
+  the screen. I had this problem while testing statist in CygWin
+  on Windows 98. You can use one of the two programs to strip
+  all accents from a text file. The script DE_delAccents.sed is
+  good for German texts; for example, it converts the letter `ü'
+  into `ue'.  The script delAccents.sed is good for many other
+  European languages; when it finds a letter with accent, it
+  outputs the same letter without the accent.
+
+     Example of usage:
+
+       sed -f delAccents.sed pt_BR.po > new_pt_BR.po
+
+
+-----------
+  Jakson

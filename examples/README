@@ -1,0 +1,30 @@
+
+QUICK START
+===========
+
+  The "*.dat" files in this directory are examples of statist data files.
+  To open them, just do:
+
+	statist data_file
+
+  To open the file city.dat with its labels, and to have a colored output:
+
+	statist --color city.dat --labels city.labels 
+
+SOME DETAILS
+===============
+
+  The extensions ".dat" to data files and ".labels" to labels files are just a
+  convenience. You can give any name you want to these kind of files.
+  
+  Please, open the files with your preferred text editor to see what is inside
+  them. Some things that you might note while inspecting the files: (a) you can
+  insert comments in data files; (b) fields might be separated by more than one
+  tab or space; (c) if you want to include the names of columns you must add
+  "#%" at the begin of the line with the names; (d) the format of the labels
+  file is very simple; (e) you can't use strings as values (or factors), but
+  you can attribute names to numbers if you use a labels file.
+  
+  Please, read the "User Manual" for complete explanation on how to prepare
+  data files for statist.
+

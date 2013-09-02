@@ -1,0 +1,61 @@
+% Standard definitions
+\typeout{Stylefile `mydefs.sty' from April 7th, 1994, adapted only for programm.tex of statist by Bernhard Reiter (18.8.1998)}
+
+\oddsidemargin 9mm
+\textwidth 142mm
+
+\addtolength{\topmargin}{-10mm}
+\textheight 220mm
+
+\newcommand{\el}{\par\vspace{\baselineskip}}
+\newcommand{\fsize}{\small}
+\newcommand{\mc}[3]{\multicolumn{#1}{#2}{#3}}
+\renewcommand{\textfraction}{0.0}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.0}
+\renewcommand{\floatpagefraction}{0.9}
+
+\newif\iffullpic \fullpictrue
+\newcommand{\ifpicture}[2]{\iffullpic #1\else #2 \fi}
+\fullpicfalse
+
+%% not used in programm.tex, it just confuses modern LaTeX2e s
+%
+% \chardef\atcode=\catcode`\@
+% \catcode`\@=11 % \makeatletter
+% \ifcase \@ptsize %
+% %  \typeout{Hello 10pt}%
+%   \newfont{\bfit}{cmbxti10 scaled 1000}%
+%   \newfont{\lbfit}{cmbxti10 scaled 1095}%
+%   \newfont{\Lbfit}{cmbxti10 scaled 1200}%
+%   \newfont{\LAbfit}{cmbxti10 scaled 1440}%
+% \or %
+% %  \typeout{Hello 11pt}%
+%   \newfont{\bfit}{cmbxti10 scaled 1095}%
+%   \newfont{\lbfit}{cmbxti10 scaled 1200}%
+%   \newfont{\Lbfit}{cmbxti10 scaled 1440}%
+%   \newfont{\LAbfit}{cmbxti10 scaled 1728}%
+% \or %
+% %  \typeout{Hello 12pt}%
+%   \newfont{\bfit}{cmbxti10 scaled 1020}%
+%   \newfont{\lbfit}{cmbxti10 scaled 1440}%
+%   \newfont{\Lbfit}{cmbxti10 scaled 1728}%
+%   \newfont{\LAbfit}{cmbxti10 scaled 2074}%
+% \fi%
+% \catcode`\@=\atcode % return to previous catcode
+
+\newif\if@german \@germanfalse  \def\ds@german{\@germantrue}
+\@options
+
+\if@german
+%  \typeout{Hallo, German Style geladen}
+  \renewcommand{\figurename}{\fsize \bf Abb.}
+  \renewcommand{\tablename}{\fsize \bf Tab.}
+\else
+%  \typeout{Hello, English mode!}
+  \renewcommand{\figurename}{\fsize \bf Fig.}
+  \renewcommand{\tablename}{\fsize \bf Table}
+\fi
+
+%END
+

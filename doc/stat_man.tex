@@ -1,0 +1,615 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{german,epsfig,mydefs}
+
+%%\documentstyle[german,11pt,psfig,mydefs]{article}
+
+%%\documentstyle[german,11pt,epic,eepic,mydefs]{script_s}
+%%%\documentstyle[german,11pt,psfig,mydefs]{script_s}
+
+\voffset 1.0cm
+\newcommand{\st}{{\tt sta"-tist}}
+%%%\addtolength{\textwidth}{-2.5cm}
+%%%\raggedright
+
+\begin{document}
+
+\title{Dokumentation zum Statistikprogramm \st}
+\author{Dirk Melcher\\
+  Institut f"ur Umweltsystemforschung, Universit"at Osnabr"uck\\
+  Artilleriestr.\ 34, 49069 Osnabr"uck\\
+  email:  Dirk.Melcher@usf.Uni-Osnabrueck.DE}
+\date{Dokumentation vom 31.1.97 (f"ur {\tt statist v0.1})\\
+	{\small 16.2.1998 kleine Anmerkungen von Bernhard Reiter\\
+		18.8.1998 Selektive Aktualisierungen von B.Reiter
+	}\\
+        {\bf Achtung! Diese Dokumentation enth"alt 
+	veraltete Informationen!}
+     }
+\maketitle
+
+%\begin{center}
+%{\Large\bf Dokumentation zum Statistikprogramm \st \\ }
+%\el
+%{\small Dirk Melcher, Institut f"ur Umweltsystemforschung, Uni
+%  Osnabr"uck\\ Artilleriestr.\ 34, 49069 Osnabr"uck\\
+%  email:  dmelcher@usf.Uni-Osnabrueck.DE}
+%\el
+%\el
+%  Version vom 31.1.97\\
+%\end{center}
+
+
+\section{Einleitung}
+\label{sec:einleitung}
+
+Zuerst einmal: Das Programm \st\ ist ein Laienprogramm, also keine
+"uberzogenen Erwartungen! Es wurde geschrieben, um einfache,
+allt"agliche Statistik ausf"uhren zu k"onnen, ohne jedesmal einen
+"`Dinosaurier"' wie SAS oder SPSS bem"uhen zu m"ussen. Es soll aber
+keineswegs dazu dienen, um wirklich aufwendige statistische Verfahren
+durchzuf"uhren.
+
+
+Das Programm hat den Anspruch
+\begin{enumerate}
+\item {\em einfach\/} und schnell zu bedienen zu sein
+\item wirklich portabel zu sein. Daher wurde auf aufwendige
+  Ein/Ausgabe, Fenstertechnik, Men"uschn"uddel u.v.a.\ verzichtet
+\item schnell und simpel um zus"atzliche Routinen zu erweitern zu sein
+\item halbwegs speicherschonend zu sein
+\end{enumerate}
+
+{\bf \st\ befindet sich noch in der beta-Phase. Wie bei jedem Programm
+  "ublich wird auch bei \st\ ausdr"ucklich keine Garantie auf richtige
+  Ergebnisse "ubernommen!}
+
+\section{Installation}
+\label{sec:installation}
+
+Die Installation ist denkbar einfach: Man kopiert das Programm eben
+dorthin, wo man's haben will. G"unstig w"are es nat"urlich, wenn zu
+diesem Verzeichnis auch ein Pfad gelegt w"are $\ldots$ Es gibt nur
+einen einzigen Haken: f"ur jede Spalte (s.\ 
+Abschnitt~\ref{sec:daten}), die eingelesen wird, legt \st\ eine
+tempor"are Datei an. Wenn man Dateien mit vielen Spalten einliest,
+kann unter {\sc dos} die Anzahl der ge"offneten Dateien zu gro"s
+werden. In diesem Fall, falls es nicht schon geschehen ist, in der
+{\tt config.sys} mit dem Befehl {\tt FILES=40} die Anzahl der
+Dateipuffer auf 40 oder was anderes hochsetzen. Au"serdem ist f"ur
+die {\sc dos}-Version darauf zu achten, da"s das Verzeichnis 
+\verb|c:\tmp| existiert, andernfalls mit \verb|md c:\tmp| das Verzeichnis
+anlegen oder die entsprechende Zeile in den \st\ Quellen "andern und
+neu "ubersetzen 
+(Datei {\tt data.c} am Ende von Funktion {\tt makefilename()}).
+
+
+\section{Aufruf}
+{\tt statist [-help -silent -log -nobell -nofile -noplot -thist] {\em
+    Datenfile}}
+\par Die Option {\tt -help} gibt einen (sehr kurzen) Hilfetext aus.
+Wie ein Datenfile auszusehen hat, wird in Abschnitt \ref{sec:daten}
+beschrieben. Die Optionen {\tt -log} bewirkt, da"s die Ergebnisse in
+der Datei {\tt statist.log} protokolliet werden und die Option {\tt
+  -nobell} bewirkt, da"s bei Fehlern und Warnungen kein Piepton ert"ont.
+Die Optionen {\tt -silent}, {\tt -nofile}, {\tt -noplot} und {\tt
+  -thist} werden in den Abschnitten \ref{sec:batch}, \ref{sec:daten},
+\ref{sec:gnuplot} und \ref{sec:funktionen} beschrieben.
+
+
+\section{statist und gnuplot}
+\label{sec:gnuplot}
+{\tt gnuplot} ist ein interaktives Graphikprogramm zur Darstellung von
+Daten und Funktionen. Es kann nicht nur im Dialog, sondern auch mit
+Hilfe eines Skripts gesteuert werden.
+
+L"auft \st\ unter {\sc Unix}, dann werden gewisse Funktionen von \st\
+durch eine {\tt gnuplot}-Graphik unterst"utzt. Voraussetzung daf"ur ist
+nat"urlich, da"s das {\tt gnuplot} installiert und
+sich das entsprechende Verzeichnis in der {\tt PATH}-Variablen
+befindet.
+
+Unter {\sc Dos} wird von \st\ eine Kommandodatei namens {\tt
+  stat\_gpl.com} erzeugt, mit deren Hilfe nach Beendigung von \st\ 
+eine {\tt gnuplot}-Graphik erzeugt werden kann. Nimmt man eine
+Windows-Version von {\tt gnuplot}, dann kann man bequem unter
+MS-Windows \st\ in einer DOS-Box laufen lassen und im anderen Fenster
+  {\tt gnuplot}.
+
+Momentan werden folgende Funktionen (s.\ Abschnitt
+\ref{sec:funktionen}) unterst"utzt:
+\begin{itemize}
+\item {\sc Box- und Whisker} Plot (Median, Standardabweichung etc.)
+\item Lineare Regression (2- und 3-dimensional)
+\item Polynomregression
+\item Test auf Normalverteilung (H"aufigkeitshistogramm + Summenfunktion)
+\item Probitanalyse
+\end{itemize}
+Au"serdem kann man unter dem Men"upunkt {\tt Datenverwaltung |
+  gnuplot-Befehle eingeben} direkt {\tt gnuplot}-Befehle eingeben, um so
+eine Graphik interaktiv zu verfeinern oder f"ur den Ausdruck fertig
+machen (nur unter {\sc Unix}). Will man {\em keine\/} {\tt
+  gnuplot}-Graphik haben, z.B. weil man im Batch-Betrieb arbeitet (s.\ 
+Abschnitt \ref{sec:batch}) oder weil der Rechner zu langsam ist, dann kann das
+Programm mit der Option {\tt -noplot} aufgerufen werden.
+
+
+
+\section{Daten}
+\label{sec:daten}
+Daten werden dem Programm grunds"atzlich in Form von simplen
+ASCII-Dateien zugef"uhrt. Entweder ruft man das Programm mit einer
+ASCII-Datei auf, oder das Programm fragt gleich beim Aufruf nach dem
+Namen einer Datendatei. Ohne Datendatei tut sich nix, es sei denn, man
+gibt beim Aufruf die Option {\tt -nofile} an, um die Daten direkt
+"uber die Tastatur einzugeben (Men"upunkt {\tt Datenverwaltung |
+  Spalte vom Terminal einlesen}). Das macht aber eigentlich nur selten
+Sinn. Die Option ist mehr daf"ur gedacht, um unter {\sc Unix}
+Men"ubefehle zusammen mit den Daten zu \st\ zu pipen.
+
+Eine Datendatei besteht aus einer oder mehreren Zahlenspalten
+(momentan max.\ 25). Die Zahlen in der Datei m"ussen durch ein oder
+mehrere Leerzeichen voneinander getrennt werden. Es ist auch erlaubt,
+eine Datei mit verschieden langen Spalten einzugeben. In diesem Fall
+mu"s aber in der {\em k"urzeren\/} Spalte (in der sozusagen Zahlen
+"`fehlen"') ein `M' {(Vor {\tt statist v0.12} mu"ste dies ein `.' sein.
+Kann in Quell-Datei {\tt statist.h} bei {\tt \verb|#define NODATA|} 
+vor "Ubersetzung von \st\ ge"andert werden.)}
+stehen, damit \st\ wei"s, welche Zahl welcher
+Spalte zuzuordnen ist. Beispiel:
+
+\begin{verbatim}
+# Beispiel Datendatei fuer statist
+  1  3   5  6
+  7  8   9 10
+ 11 12  13 14
+ 15  M  16  M
+\end{verbatim}
+
+Wie man dem Beispiel entnehmen kann, sind auch Kommentarzeilen nach Art von
+{\tt gnu"-plot} zugelassen, die mit einem `{\tt\#}' in der ersten Spalte
+eingeleitet werden. Leerzeilen werden ebenfalls ignoriert.
+
+Genauso gut h"atten die Daten auch so eingetippt werden k"onnen:
+
+\begin{verbatim}
+# Beispiel Datendatei fuer statist
+# Ich glaube, hier ist was schief gelaufen
+  1     3  5  6
+ 7  8   9      10
+ 11 12     13 14
+15  M            16  M
+\end{verbatim}
+
+Im Programm werden die Spalten jeweils Variablen zugeordnet.
+Standardm"a"sig wird die 1. Spalte mit `a', die 2. mit `b', die 3. mit
+`c' usw.\ bezeichnet.  Um bei vielspaltigen Datendateien den "Uberblick
+zu behalten, ist es aber auch m"oglich, die Spalten einzeln zu
+benennen. Das hat den Vorteil, da"s man sich dann nicht merken mu"s,
+in welcher Spalte eine bestimmte Variable steht. Dies ist innerhalb
+der ersten Zeile der Datendatei m"oglich. Die Zeile mu"s mit einem
+`{\tt\#}' als Kommentarzeile gekennzeichnet sein, gefolgt von einem
+`{\tt\%}'. Dann werden den Zeilen folgenderma"sen Namen zugeordnet
+(Beispiel):
+
+\begin{verbatim}
+#% kow kaw ec50
+0.34 4.56 0.23
+1.23 5.45 6.76
+6.78 1.34 9.60
+\end{verbatim}
+
+Dabei ist folgendes zu beachten:
+\begin{enumerate}
+\item Es m"ussen genauso viele Variablennamen angegeben werden, wie
+  Spalten vorhanden sind.
+\item Als Spaltennamen d"urfen {\em nur\/} Buchstaben, Ziffern
+  und `\_' benutzt werden
+\end{enumerate}
+
+"Altere Versionen von statist verwendeten die Zeichenkombination
+\verb|#!|. {(Das alte Verhalten l"a"st sich leicht wieder herstellen,
+wenn vor dem Kompilieren von statist in der Datei {\tt data.c} 
+in der Funktion {\tt parsecomment()}
+die Konstante {\tt \verb|var_id|} ge"andert wird.)}
+
+%Hat man ein Datenfile, in denen auch alphanumerische Daten, also keine
+%Zahlen, vorhanden sind, dann k"onnen auch solche Dateien von \st\ 
+%verarbeitet werden, wenn die alphanumerischen Spalten in der Kopfzeile
+%mit einem \verb|$| gekennzeichnet werden. Beispiel:
+
+%\begin{verbatim}
+%#% $chemikalie kow  kaw  ec50  $Kommentar
+%2,4-D          0.34 4.56 0.23  vorhanden
+%Atrazin        1.23 5.45 6.76  nicht_vorhanden
+%Nitralin       6.78 1.34 9.60  vorhanden
+%\end{verbatim}
+
+%Zu beachten ist, da"s in den alphanumerischen Spalten kein Leerzeichen
+%stehen darf, da dies als neuer Spalte interpretiert w"urde! Deswegen
+%mu"s es im obigen Beispiel auch  \verb|nicht_vorhanden| hei"sen.
+
+%Au"serdem kann man auch innerhalb des Programmes Spalten benennen, was
+%aber relativ unpraktisch ist (Men"upunkt {\tt Daten"-ver"-wal"-tung |
+%Spalten benennen}).
+
+Manchmal arbeitet man mit Daten, deren einzelne Objekte benannt
+sind. Den Objekten entspricht in einem \st-File eine
+Zeile. Standardm"a"sig "`duldet"' \st\ lediglich Dateien, die nur
+Zahlenspalten und Kommentarzeilen enthalten. Um jedoch auch mit
+Dateien zu arbeiten, welche alphanumerische Spalten enthalten, kann
+man diese Spalten explizit mit einem \verb|$|-Zeichen kennzeichen, so da"s
+\st\ nicht versucht, diese als Zahl zu interpretieren:
+
+\begin{verbatim}
+#% $name kow kaw ec50
+2,4-D   0.34 4.56 0.23
+Benzol  1.23 5.45 6.76
+Atrazin 6.78 1.34 9.60
+\end{verbatim}
+
+Zu beachten ist, da"s in den alphanumerischen Spalten kein Leerzeichen
+stehen darf, da dies als neue Spalte interpretiert w"urde! Um beim
+obigen Beispiel zu bleiben: \verb|2,4 D| w"are falsch.
+
+Bei einigen Prozeduren ist die Anzahl der verwendeten Spalten
+variabel. Z.B. k"onnen bei der multiplen linearen Regression 2 oder
+auch 10 Spalten angegeben werden. Will man f"ur eine Prozedur alle
+eingelesenen Spalten verwenden, so tippt man, sobald das Programm nach
+der Anzahl der Spalten fragt, einfach `alle' ein. Damit entf"allt die
+explizite Zuordnung der Spalten zu den Variablen.
+
+Man kann auch Daten aus mehreren Dateien gleichzeitig einlesen und
+somit Daten aus verschiedenen Dateien kombinieren. Dazu w"ahlt man den
+Men"upunkt {\tt Daten"-ver"-wal"-tung | Neue Datei einlesen}.
+
+
+
+\section{Men"u}
+\label{sec:menue}
+Durch das Programm wird man mit einem {\em sehr\/} einfachen Men"u gef"uhrt.
+Grundz"atzlich werden Men"upunkte mit Ziffern gew"aehlt. `0' f"uhrt
+immer in die n"achst h"ohere Men"uebene und beendet konsequenterweise
+im Hauptmen"u das Programm. Ein Schmankerl gibt es aber doch: Man kann
+immerhin jede Benutzerabfrage mit der Returntaste unterbrechen und
+landet dann wieder in eines der Men"us.
+
+Wenn man eine Statistikprozedur aufruft, wird man aufgefordert, den
+Spalten Variablen zuzuordnen, das ist eigentlich selbsterkl"arend.
+
+
+
+\section{Batch-Betrieb}
+\label{sec:batch}
+
+Wenn man zahlreiche Datens"atze auf immer die gleiche Art und Weise
+durch \st\ durchnudeln m"ochte und es einem auf die Nerven geht, sich
+immer wieder durchs Men"u durchzuhangeln, gibt es eine kleine Hilfe:
+Da das Programm nur mit Standard-Ein/Ausgabe arbeitet, kann man sich
+eine kleine "`Antwort"'-Datei basteln. Hierin schreibt man exakt das
+hinein, was man sonst als Eingabe f"ur \st\ eintippen w"urde, also in
+der Regel nur die Zahlen/Buchstaben, die man als Auswahl f"ur das
+Men"u und die Spalten eingibt.  Genauso kann man die Ausgabe in eine
+Datei umleiten, um sich dann die Ergebnisse in Ruhe anzusehen oder
+aber alternativ die Option {\tt -log} angeben (was bewirkt, da"s das
+Ergebnis nicht nur in die Datei {\tt statist.log} sondern auch auf den
+Bildschirm ausgegeben wird). Mit der Option {\tt -silent} wird die
+Ausgabe von Dialogtexten unterdr"uckt, so da"s nur noch das Ergebnis
+der Berechnungen ausgegeben wird. Au"serdem f"allt dann die
+Auf"|forderung zum Dr"ucken der {\tt Return}-Taste zum Fortfahren des
+Programmes weg. Will man z.B. im Batch-Modus eine lineare Regression
+mit den Spalten a und b einer Datei durchf"uhren, dann s"ahe die
+"`Antwort"'-Datei so aus (Vergleiche hierzu die Eingabe beim normalen
+Men"u-Betrieb):
+
+\begin{verbatim}
+  2
+  1
+  a
+  b
+  0
+  0
+\end{verbatim}
+
+Der Aufruf f"ur den Batch-Betrieb k"onnte dann also folgenderma"sen
+aussehen:
+
+\verb|   statist daten.dat -silent < statist.ant > statist.log | \par
+{\centering bzw.\\}\par
+\verb|   statist daten.dat -silent -log < statist.ant   |
+
+
+\section{Funktionen}
+\label{sec:funktionen}
+
+Momentan stehen folgenden Statistikfunktionen zur Verf"ugung. (Die
+Angaben in Klammern beziehen sich auf die Literatur, denen der
+Algorithmus entnommen wurde.):
+
+\begin{enumerate}
+\item Lineare Regression
+\item Rank-Korrelationskoeffizient von {\sc Spearman} \cite[S. 175
+  f\/f]{bruning77}
+\item Multiple lineare Korrelation \cite[S. 77 f\/f]{mueller85}
+\item Partielle lineare Korrelation (max. 5 Variablen) \cite[S. 82
+  f]{weber86}
+\item Polynomregression \cite[S. 65 f]{mueller85}
+\item Korrelationsmatrix der linearen Korrelationskoeffizienten
+\item Korrelationsmatrix der {\sc Spearman'schen} Korrelationskoeffizienten
+\item Punkt-biserielle (lineare) Korrelation \cite[S. 182 f\/f]{bruning77}
+\item t-Test zum Vergleich zweier Mittelwerte aus Stichproben \cite
+  [S. 10 f\/f] {bruning77}
+\item t-Test zum Vergleich zweier Mittelwerte bei paarweiser Anordnung
+  der Stichproben \cite[S. 175 f]{weber86}
+\item Test auf Normalverteilung ({\sc Kolmogoroff-Smirnoff-Lilliefors})
+  \cite[S. 100 f\/f]{neave88}
+\item $\chi^2$-Vierfeldertafel \cite[S. 200 f\/f]{weber86}
+\item $\chi^2$-Mehrfachtafel \cite[S. 209 f\/f]{weber86}
+\item U-Test von {\sc Mann} und {\sc Whitney} \cite[S. 184
+  f\/f]{weber86}
+\item Zweistichprobentest von {\sc Wilcoxon} \cite[S. 340 f\/f]{weber86}
+\item Test von {\sc Kruskal} und {\sc Wallis} auf {\em k\/}
+  unabh"angige Stichproben  \cite[S. 337 f\/f]{weber86}
+\item Standardabweichung, Mittelwert, Median u.a.
+\item Probitanalyse \cite[S. 534 f\/f]{weber86}
+\item Log-Transformation (10er Logarithmus), Invertierung (1/x) und Sortieren
+\item Elemenieren von vermuteten Ausrei"sern \cite[S. 835]{hartung86}
+\item Kreuz-Validierung multipler linearer Regression (noch experimentell!).
+\end{enumerate}
+
+Bei Korrelations- bzw. Regressionsfunktionen wird immer zugleich ein
+Test auf signifikante Korrelation durchgef"uhrt. Approximationen f"ur
+t-Verteilung, Normalverteilung, $\chi^2$-Verteilung und
+t-Verteilung wurden \cite{mueller85} entnommen.
+\el
+
+
+\noindent {\bf Anmerkung zu den Funktionen:}
+\begin{itemize}
+\item Beim Test auf Normalverteilung ({\sc
+    Kolmogoroff"=Smirnoff"=Lilliefors}) lautet die Hypothese $H_0$: die
+  Daten sind normalverteilt. Diese Hypothese wird akzeptiert, wenn die
+  Wahrscheinlichkeit f"ur $H_1$ (die Daten sind nicht normalverteilt)
+  {\em nicht} signifikant hoch ist. Die "`Beweislast"' liegt also bei
+  $H_1$. Dies bedeutet, da"s $H_0$ desto besser abgesichert ist, je
+  {\em h"oher} das Signifikanzniveau $\alpha$ liegt, denn $\alpha$ gibt
+  jetzt die Wahrscheinlichkeit f"ur $H_0$ statt f"ur $H_1$ an. Es geht
+  hier also genau umgedreht wie bei den anderen Tests zu!
+
+  W"ahlt man den Test auf Normalverteilung, so gibt \st\ zuerst ein
+  H"aufigkeitsdiagramm aus.
+
+  Bei Angabe der Option {\tt -thist} (oder auch {\tt -noplot}, s.\
+  Abschnitt \ref{sec:gnuplot}) wird dieses als Textgraphik
+  dargestellt, ansonsten als {\tt gnuplot}-Graphik.
+  
+  Da beim {\sc KS-Lilliefors}-Test die theoretisch erwartete
+  Normalverteilungsfunktion mit der Summenh"aufigkeitsfunktion der 
+  Daten verglichen wird, werden diese Funktionen graphisch
+  dargestellt. Zwei waagerechte Linien zeigen die gr"o"ste `vertikale'
+  Differenz der beiden Funktionen auf, welche die Pr"ufgr"o"se $D$
+  darstellt.
+\item Bei den t-Tests wird vorrausgesetzt, da"s die Varianzen der
+  Grundgesamtheiten, aus denen die Stichproben vorliegen, gleich gro"s
+  sind. Wenn man paarweise angeordnete Me"swerte testen m"ochte (z.B.
+  Vergl.\ des Gewichtes von m"annl.\ und weibl.\ M"ausen aus je einem
+  Wurf, s.\ \cite[S. 175 f]{weber86}), dann wende man den t-Test zum
+  Vergleich paarweise angeordneter Stichproben an.
+\item Beim $\chi^2$-Vierfelder-Tafeltest gibt es zwei M"oglichkeiten
+  zur Eingabe der Daten:
+  \begin{enumerate}
+  \item Wenn die beiden eingelesenen Spalten nur `0' oder `1'
+    enthalten, bedeuted dies `Merkmal nicht vorhanden' bzw.\ `Merkmal
+     vorhanden'. Dementsprechend werden die Merkmalskombinationen
+    f"ur die Vierfeldertafel aus"-ge"-z"ahlt. Um z.B.\ eine Vierfeldertafel
+    f"ur zwei Merkmale aufzustellen, k"onnte man folgende Datei eingeben:
+
+    \begin{verbatim}
+    # Merkmale einer Blume 1=gross 2=rot
+    1 0
+    1 0
+    1 1
+    1 1
+    0 1
+    0 0
+    \end{verbatim}
+
+    \st\ stellt aus dieser Eingabe die Vierfeldertafel auf, wie dies in
+    Tabelle \ref{tab:vierfeld} dargestellt ist.
+
+    \begin{table}[htb]
+    \begin{center}
+    \caption[]{\protect\label{tab:vierfeld} \fsize Beispiel f"ur eine
+       Vierfeldertafel f"ur die Merkmale A und B.}
+    \vspace{1ex}
+    \begin{tabular}{|l|c|c|}
+       \hline
+                          &  A vorhanden &  A nicht vorhanden \\
+       \hline
+       B vorhanden        &         2    &         1          \\
+       B nicht vorhanden  &         2    &         1          \\
+       \hline
+    \end{tabular}
+    \end{center}
+    \end{table}
+
+  \item Wenn die zwei Spalten aus je nur 2 Werten bestehehen, wird
+    davon ausgegangen, da"s die fertig ausgez"ahlte Vierfeldertafel
+    eingelesen worden ist. Die Werte w"urden dann also wie folgt
+    eingegeben:
+
+    \begin{minipage}{10cm}
+    \begin{verbatim}
+    # Tafel fuer Merkmale `rot' und `gross' einer Blume
+    2 1
+    2 1
+    \end{verbatim}
+    \end{minipage}
+
+  \end{enumerate}
+\item Beim $\chi^2$-Mehrfachtafel-Test k"onnen im Gegensatz zur
+  Vierfeldertafel Merkmale in mehrere Klassen dargestellt werden.
+  Ein Beispiel hierf"ur w"are die Untersuchung der Verteilung der Merkmale
+  `Blattgr"o"se' und `Bl"utenfarbe' einer Pflanze. Das Merkmal Blattgr"o"se
+  k"onnte z.B.\ in die Klassen `gro"s', `mittel' und `klein'eingeteilt
+  werden und die Bl"utenfarbe in die Klassen `blau', `rot' und `wei"s'. Im
+  Gegensatz zur Vierfeldertafel werden bei diesem Test nur
+  ausgez"ahlte Tabellen von \st\ angenommen, also z.B.
+
+    \begin{verbatim}
+    # Tafel fuer die Merkmale `Bluetenfarbe' und `Blattgroesse'
+    # Spalten: Bluete blau   rot    weiss
+    # Zeilen   Blatt  gross  mittel klein
+     29   11   6
+    273  191  64
+      8   31   4
+    \end{verbatim}
+
+\item Beim U-Test werden zwei Variable $x$ und $y$ daraufhin
+  untersucht, ob sie sich signifikant voneineander unterscheiden. Er
+  ist somit das parameterfreie Gegenst"uck zum t-Test.  Beim U-Test
+  erfolgt ein Test der Pr"ufgr"o"se {\em U\/} auf Signifikanz mit Hilfe
+  der Normalverteilung, wenn sowohl f"ur x als auch y mindestens 8
+  Werte vorhanden sind, sonst benutzt \st\ eine Tabelle
+  der kritischen Werte.
+%  Sonst mu"s der Test
+%  f"ur die Verteilung von {\em U\/} leider mit Hilfe von Tabellen aus
+%  irgendwelchen Statistikb"uchern durchgef"uhrt werden.
+\item Beim Test von {\sc Kruskal} und {\sc Wallis} handelt es sich wie
+  beim U-Test um einen parameterlosen Test, bei dem gepr"uft wird, ob
+  drei oder mehr unabh"angige Stichproben der gleichen Grundgesamtheit
+  entstammen. Dieser Test ist somit das Gegenst"uck zum parametrischen
+  F-Test. Wenn die Stichproben jeweils mehr als 4 Werte enthalten,
+  kann ein $\chi^2$-Test durchgef"uhrt werden, ansonsten mu"s die
+  Pr"ufgr"o"se $H$ leider mit Hilfe von Tabellen getestet werden.
+\item Beim Zweistichprobentest von {\sc Wilcoxon} handelt es sich
+  ebenfalls um einen parameterlosen Test, bei dem zwei
+  Zufallsvariablen $x$ und $y$ paarweise verglichen werden und ist
+  somit da"s parameterlose Gegenst"uck zum t-Test f"ur paarweise
+  angeordnete Stichproben. Er eignet sich z.B. f"ur Fragestellungen,
+  bei denen ein Objekt mit zwei verschiedenen Mitteln behandelt worden
+  ist. $x$ und $y$ charakterisieren in diesem Fall die
+  unterschiedliche Behandlung am gleichen Objekt. Die Hypothese $H_0$
+  lautet dann: Es gibt keine Unterschiede in der Behandling $x$ und
+  $y$.
+
+  F"ur Stichproben $<$ 25 wird eine Tabelle der kritischen Werte
+  benutzt, ansonsten wird die Wahrscheinlichkeit mit Hilfe einer
+  Approximation an die Normalvewrteilung berechnet.
+  
+\item Der Punkt-biserielle Korrelationskoeffizient wird benutzt, wenn
+  die Korrelation zwischen einem quantitativen Merkmal und einem
+  alternativen Merkmal berechnet werden soll (Bsp.: Korrelation
+  `Durchmesser einer Bl"ute' -- `Bl"ute ist rot' ($\Longrightarrow$
+  ja/nein Entscheidung).
+\item Bei der log-Transformation wird eine neue Spalte erzeugt, welche
+  die logaritmierten Werte einer eingelesenen Spalte enth"alt. Dies ist
+  n"utzlich, wenn man z.B.\ eine log-lineare statt einer
+  linearen Korrelation berechnen und/oder testen will. Das gleiche
+  gilt analog f"ur die Invertierungsfunktion 1/x, der Sortierfunktion
+  und der Ausrei"serfunktion. 
+\item Unter dem Menuepunkt {\tt Verschiedens |Ausreisser +
+    Box-Whisker-Plot} wird via {\tt gnuplot} ein sogenannter {\em
+    Box-Whisker-Plot} \cite[S. 835 f\/f]{hartung86} erstellt (s.\ 
+  Abb.\ \ref{fig:boxplot}). {\em Box-Whisker-Plots} sind gut geeignet,
+  um auf einen Blick bestimmte Eigenschaften von Verteilungen zu
+  erfassen. Zum Beispiel gibt die Lage des arithmetischen Mittelwertes
+  im Vergleich zum Median einerseits und die Lage des
+  Konfidenzintevalles des Medians zum 25\%- und 75\%-Quartil
+  Aufschlu"s "uber die Schiefe einer Verteilung. Au"serdem kann man
+  potentielle Ausrei"ser mit einem Blick erkennen.
+\item Unter dem Men"upunkt {\tt Regreesion und Korrelation} finden
+  sich die Punkte {\tt Kreuz-Validierung multipler linearer
+  Regression} und {\tt Randomisierung multipler linearer Regression}.
+  Diese beiden Punkte dienen der Evaluierung der Prognosef"ahigkiet
+  linearer Modelle \cite{wold91,wold95}.
+
+  Die prognostizierte Varianz $Q^2$ wird beim
+  Men"upunkt {\tt Kreuz-Validierung mul"-ti"-pler linearer Regression}
+  folgenderma"sen berechnet: Ein Objekt wird aus dem Datensatz
+  herausgenommen und die
+  Regression mit den verbleibenden Daten durchgef"uhrt\footnote{ %
+    Nach {\sc Wold} ist es g"unstiger, nicht ein, sondern mehrere
+    Objekte aus dem gesamten Datensatz herauszunehmen. Dies ist bisher
+    noch nicht implementiert}. %
+  Mit Hilfe der so ermittelten Regressionskoeffizienten $a_i$ kann
+  dann die abh"angige Variable $yo$ des fehlenden Objektes berechnet
+  werden. Der so berechnete Wert kann als prognostizierter Wert $yp$
+  bezeichnet werden. Dieses Verfahren wird f"ur alle Datens"atze
+  angewendet, so da"s f"ur jeden gemessene Wert $yo$ ein
+  prognostizierter Wert $yp$ existiert.  Anschlie"send kann die
+  prognostizierte Varianz $Q^2$ aus den $yo$, $yp$ und dem Mittelwert
+  $\bar{y}$ berechnet werden:
+  \begin{equation}  
+  \label{eq:q^2-def}
+  Q^2 = 1 - \frac{\sum\limits_{i=1}^n (yo_i - yp_i)^2}
+  {\sum\limits_{i=1}^n (yo_i-\bar{y})^2}
+  \end{equation}
+  
+  Als weitere Ma"snahme zur Validierug wird von {\sc Wold} die
+  Randomisierung des Response-Vektors genannt (Men"upunkt
+  {\tt Randomisierung multiple linearer Regression}). Bei diesem
+  verfahren werden die unabh"angigen Variablen intakt gelassen, w"ahrend
+  der Vektor der $y$-Werte mittels Zufallsgenerator randomisiert wird.
+  Dabei werden nicht die $y$-Werte selber ge"andert, sondern die
+  Indizes des Vektors werden permutiert, die $y$-Werte werden also
+  vertauscht. Dieses Randomisierung wird zahlreiche Male wiederholt
+  und f"ur jeden so manipulierten Datensatz das Bestimmtheitsma"s $r^2$
+  und die prognostizierte Varianz $Q^2$ berechnet. Die Verteilungen
+  dieser Werte k"onnen in einem Histogramm dargestellt werden, so da"s
+  erkennbar wird, ob das $r^2$ bzw. $Q^2$ des originalen Datensatzes
+  mit hoher Wahrscheinlichkeit Produkt eines `Zufalls'-Datensatzes ist
+  oder ob nicht. Der Benutzer kann w"ahlen, wieviel Tupel und somit
+  wieviele aus permutierten Datens"atzen erzeugte $r^2$ und $Q^2$
+  prodiziert werden sollen. Dies kann bei gr"o"seren Datens"atzen
+  durchaus l"anger dauern! Zum Schlu"s werden zwei neue Spalten
+  \verb|rquad| (enth"alt die $r^2$ Werte) und \verb|qquad| (enth"alt
+  die $Q^2$ Werte) erzeugt. Diese Spalten k"onnen z.B. mit Hilfe eines
+  Histogrammes (Men"upunkt {\tt Verschiedenes|Standardabweichung,
+  Mittelwert, Median uva.}) ausgewertet werden. Man kann dann sehen,
+  ob das `echte' $Q^2$ bzw. $r^2$ in einem H"aufigkeitsbereich liegen,
+  in dem auch viele mit Hilfe der Zufallsdatensaetze erzeugte Werte
+  liegen oder nicht. L"a"st die Verteilung des Histogrammes darauf
+  schlie"sen, da"s das Auftreten des `echte' $Q^2$ bzw. $r^2$  in einem
+  Zufallsdatensatz unwahrscheinlich ist, dann spricht das f"ur eine
+  aussagekr"aftige Regression.
+  
+ \end{itemize}
+
+%\bibliographystyle{discit}
+%\bibliography{statist}
+ 
+%\bibliographystyle{myaplain}
+%\bibliography{myabbr,statist}
+%\bibliographystyle{plain}
+ 
+\bibliographystyle{plain}
+\bibliography{statist}
+
+\vfill
+
+\begin{figure}[htbp]
+  \begin{center}
+    \leavevmode
+    \centerline{\psfig{figure=./box.ps,width=14cm}}
+%    \input{box.eep}
+%     \input{box.pstex_t}
+  \caption[]{\fsize Beispiel f"ur einen Box-Whisker-Plot. Die
+    {\em adjacent values} geben Werte an, die am dichtesten am sog.\ 
+    {\em inner fence} liegen, welcher den `inneren' Bereich gegen
+    potentielle Ausrei"ser abgrenzen \cite[S. 835]{hartung86}.}
+  \label{fig:boxplot}
+  \end{center}
+\end{figure}
+
+
+
+
+
+\end{document}
+
+
+
+% Local Variables:
+% mode: latex
+% TeX-master: t
+% End:

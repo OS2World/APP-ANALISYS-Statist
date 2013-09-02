@@ -1,0 +1,102 @@
+# This is a sample statistrc. Copy it to ~/.statistrc and adjust the values to
+# your preferences.
+
+# If you are using Windows, rename it from statistrc-sample.txt to
+# statistrc.txt.
+
+# If you are beginning to use statist, you probably will want it behaving
+# verbosely. If you set the following variable to "no", some usage tips will
+# not be printed.
+verbose = yes
+
+# For Linux only: Do you want a colorized output? [default = no] 
+color = yes
+
+# Color scheme. The color names have the format <attribute><color>, where the
+# attribute part of the name is optional, and might be "bright", "dim",
+# "blink" or "underln"; and the colors might be "red", "yellow", "green",
+# "blue", "cyan", "magenta", "white", or "black". Warning: "dim", "blink", and
+# "underln" might not work as expected in some terminal emulators. 
+
+cl_error = brightred
+cl_instructions = yellow
+cl_header = brightwhite
+cl_menu_separator = blue
+cl_line_num = magenta
+
+# What do you prefer, the built-in command to list files, or the system one?
+use_system_ls = yes
+system_ls_command = ls --color
+
+# If you name all your data files *.dat, and all your labels files *.lbs, you
+# might prefer this instead:
+#system_ls_command = ls --color *.dat *.lbs
+
+# String used to indicate missing values:
+na_string = NA
+
+# Character used to delimit columns (define it here only if you always use the
+# same field delimiter, your data files have missing values, and these missing
+# values are not indicated by any string):
+#field_separator = ","
+
+# If you prefer to use the "#%" string to indicate that the line contains
+# the variable names, you should set this variable to "no":
+#autodetect_header = yes
+
+# Should statist try to detect what is the data file decimal delimiter and
+# field separator? Or should it ask this information to you?
+#ask_dec_sep = no
+
+# If you have gnuplot installed, and want to see graphics [default: yes]:
+#use_gnuplot = no
+
+# If you want to add a string to the begin of all graphics titles:
+#graphs_title_prefix = "My Study Title\n"
+
+# Maximum number of rows to print in "Frequency table", "Compare means", and
+# other analyses.
+max_results = 200
+
+# How many lines and columns does your screen usually have? Statist tries to
+# determine these values when running under GNU/Linux. If while outputting the
+# list of columns or the list of files in the current directory the layout is
+# not OK, you can set the correct values here:
+#screen_lines = 30
+#screen_columns = 80
+
+# Statist will use the value of "screen_columns" to format the output of both
+# columns and file names, unless you choose "no":
+format_columns_out = yes
+
+# If your language environment is set to UTF-8, and gnuplot graphics aren't
+# correctly displaying non ASCII characters, you can choose one of the two 
+# solutions below:
+# (1) Set the variable "gnuplot_charset" to the non-UTF-8 charset that
+# corresponds to your language (for Western European languages, this value is
+# "ISO-8859-1"):
+#gnuplot_charset = ISO-8859-1
+# (2) If you want to mix characters from different charsets in the graphics
+# titles and labels (like Latin, Cyrillic and Greek), then DO NOT set the 
+# "gnuplot_charset" variable (or set it to "UTF-8") and find the correct values
+# for the two other variables below:
+#gnuplot_charset = UTF-8
+#gnuplot_default_term = x11 font "mbfont:vera,14"
+#gnuplot_png_font = "/usr/share/fonts/truetype/cyberbit/cyberbit.ttf" 12
+
+# Note: You should NOT mix "ISO-8859-1" and "mbfont"! Multi byte fonts is good
+# only for strings encoded in UTF-8.
+
+# Hint: To make statist automatically save all graphics as png pictures, even
+# without a X server running, set the gnuplot_default_term to something like:
+# gnuplot_default_term = png font "/usr/share/fonts/truetype/cyberbit/cyberbit.ttf" 12
+# Note that you still will have to do the gnuplot command "set output filename.png"
+# To run gnuplot graphics in console, without X server:
+# gnuplot_default_term = dumb
+
+# When statist saves columns in an ASCII file, integer numbers are printed as
+# real numbers. Example: 1.0 is printed as 1.00000e+00. Set the option below
+# to "yes" if you prefer that integer numbers are printed as integer, like
+# "1.0" being printed as "1":
+int_as_int_in_ascii_files = yes
+

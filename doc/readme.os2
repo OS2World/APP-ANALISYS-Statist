@@ -1,0 +1,20 @@
+This is the OS/2 port of statist, an opensource statistic program.
+I built it with GCC 4.5.2 (after tweaking its makefile).
+
+OS/2 executables, original documentation and support files are to be found
+in the os2 subdirectory. The "original.zip" file is a compressed archive
+file containing the original source distribution, minus the CHANGES,
+COPYING, CREDITS, KNOWN_BUGS and README / README.pt files.
+
+This program uses gettext to allow NLS, and you might have to install the
+GCC DLLs to use it if you already haven't got them.
+
+Please notice that I can't give you any warranty if you decide to use this
+software. I surely hope it will suit your needs, though :)
+
+Please consider making a donation to Paul Smedley to thank him for his work
+on GCC.
+
+Mentore Siesto
+Pisa, Italy
+mentore.siesto@alice.it

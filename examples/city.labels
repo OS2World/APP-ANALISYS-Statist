@@ -1,0 +1,34 @@
+age Respondent's age
+
+sex Respondent's sex
+0 Male
+1 Female
+
+kids Number of children
+
+happy Are you happy?
+0 Unhappy
+1 Not that happy
+2 Happy
+3 Very happy
+
+
+trust Do you trust people in general?
+0 Don't trust
+1 Trust some people
+2 Trust most people
+3 Trust
+
+god Do you believe in God?
+0 No
+1 Yes
+
+degree Respondent's highest degree
+0 Lt high school
+1 High school
+2 Junior college
+3 Bachelor
+4 Graduate
+
+income Total income
+

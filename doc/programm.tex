@@ -1,0 +1,286 @@
+\documentstyle[german,11pt,mydefs]{article}
+%\documentstyle[german,11pt,mydefs]{script_s}
+
+\voffset 1cm
+\newcommand{\st}{\tt sta"-tist \rm}
+% \addtolength{\textwidth}{-2.5cm}
+% \raggedright
+
+\begin{document}
+
+\begin{center}
+{\Large\bf Dokumentation f"ur Programmierer zum Statistikprogramm \st \\ }
+\el
+{\small Dirk Melcher, Institut f"ur Umweltsystemforschung , Uni
+  Osnabr"uck\\ Artilleriestr.\ 34, 49069 Osnabr"uck\\
+  email:  dmelcher@ramses.usf.uni-osnabrueck.de}
+\el
+\el
+  Version vom 25.5.95\\
+        {\bf Achtung! Diese Dokumentation enth"alt 
+	veraltete Informationen!}
+\end{center}
+
+\section{Einleitung}
+
+Das Programm \st\ besteht aus den Modulen {\tt statist.c, menue.c, da"-ta.c,
+  funcs.c, procs.c} und {\tt plot.c}. Zu jeder C-Datei geh"ort
+au"serdem eine entsprechende Headerdatei.
+
+Wie in der Einleitung bereits verk"undet, hat das Programm den Anspruch,
+einigerma"sen leicht erweiterbar zu sein. Hierzu sei zun"achst die
+Philosophie des Programmes geschildert:
+
+Im Programm wird streng zwischen den eigentlichen Rechenprozeduren und
+den Routinen, welche Datenmanagement, Men"uf"uhrung und Dialog
+durchf"uhren, unterschieden. Deswegen sollten {\em alle\/} Variablen
+in den Rechenprozeduren lokal sein! Das Programm mu"s die
+Rechenroutienen also mit den fertig zusammengestellten Daten
+versorgen. Die Rechenprozeduren "ubernehmen die eigentliche
+Rechenarbeit und schreiben das Ergebnis auf den Bildschirm.
+
+\section{Kompilieren}
+\st\ kann sowohl f"ur {\sc Unix} als auch {\sc Dos} kompiliert werden.
+
+% Es existieren Makefiles f"ur {\tt gcc} unter {\sc Unix} und dem {\sc
+%  Borland} C-Compiler {\tt bcc} bzw.\ der {\tt gcc}-Portierung {\tt
+%  djgpp} f"ur {\sc Dos}.
+
+%Falls \st noch kompiliert werden mu"s: Unter {\sc Unix}:
+
+% {\tt \ \ \ gcc -o statist statist.c -lm  }
+% {\tt \ \ \ make -f makefile.unx statist   }
+
+F"ur {\sc Unix} wird der gcc-Compiler vorrausgesetzt, der K\&R cc-Compiler
+tut's nicht, da das Programm in Ansi-C geschrieben ist. Das Makefile
+f"ur {\tt gcc} hei"st {\tt makefile.unx}.
+
+Unter {\sc Dos} kann das Programm z.B. mit dem Kommandozeilen-Compiler
+{\tt bcc} von {\sc Borland} (Makefile {\tt makefile.bcc}) oder mit der
+Portierung des gcc-Compilers {\tt djgpp} (Makefile {\tt makefile.djg})
+kompiliert werden. ({\tt djgpp} erstellt 32-Bit-Code f"ur 386'er. Mit
+einer 386'er Version von \st lassen sich wesentlich gr"o"sere
+Datenmengen bearbeiten.)  Das Programm wird dann jeweils mit
+
+% In diesem Fall bitte das
+% Speichermodell `Large' w"ah"-len.  Au"serdem sollte {\tt MSDOS}
+% definiert sein (als Kommandozeilenparameter {\tt -DMSDOS}, s.u.).
+% Falls man das Gl"uck hat, vor einem 286'er aufw"arts zu sitzen, kann
+% man \st z.B. folgenderma"sen kompilieren:
+% { \tt \ \ \ bcc -2 -H -d -DMSDOS -ll statist.c }
+
+{\tt \ \ \ make -f<Makefile>}  \ \ bzw. \par
+% {\tt \ \ \ make -f makefile.djg }  \ \ erstellt \par
+
+Das utility {\tt make}, welche das Makefile abarbeitet, ist sowohl im
+{\sc Borland}-Paket als auch als gnu-utility erh"altlich.
+
+
+
+\section{Ausgabeprozeduren}
+Um die Ausgabe von beliebeigen Meldungen \st flexibel handhaben zu
+k"onnen (Mitschreiben von Protokolldateien usw.), gibt es drei
+verschiedene Ausgabefunktionen, die im Stil von {\tt printf} aufgerufen
+werden:
+
+
+\begin{enumerate}
+\item {\tt out\_d}: Ausgabe von Dialogtexten, da"s hei"st also, die
+  Men"utexte, Eingabeaufforderungen und alles andere, was nicht mit
+  den eigentlichen Berechnungen zu tun hat.
+\item {\tt out\_r}: Ausgabe aller Ergebnistexte, also alles, was mit
+  den eigentlichen Berechnungen zu tun hat und in dem Modul {\tt
+    procs.c} steht.
+\item {\tt out\_err}: Ausgabe aller Fehlermeldungen. Im Gegensatz zu
+  den beiden anderen Routinen wird au"ser den `normalen' {\tt
+    printf}-Argumenten zus"atzlich als erstes Argument eine
+  Fehlerkonstante "ubergeben, die die Art des Fehlers charakterisiert:
+  {\tt WAR} wird als Warnung ausgegeben, {\tt ERR} ist ein `normaler'
+  Fehler, {\tt MAT} ist ein Fehler und {\tt MWA} eine Warnung
+  innerhalb einer Rechenprozedur (werden mit ins Protokoll geschrieben)
+  und {\tt FAT} ist ein `fataler' Fehler, der einen sofortigen Abbruch
+  des Programmes bewirkt. Danach folgen wie "ublich der Formatstring
+  und die restlichen Argumente.
+\end{enumerate}
+
+
+\section{Men"u}
+
+Will man eine Statistikprozedur hinzuf"ugen, so schaut man zuerst, in
+welches Untermen"u (Datei {\tt menue.c}) sie am besten hineinpa"st.
+Momentan gibt es lediglich die Men"uprozeduren {\tt data\_menu(),
+  re"-gress"-\_menu(), test"-\_menu()} und {\tt misc"-\_menu()}. Will
+man z.B.\ eine Testprozedur hinzuf"ugen, so sucht man die Prozedur
+{\tt test\_menu()} und f"ugt mit einer fortlaufenden Nummer den Namen
+der neuen Prozedur zum Men"utext hinzu, also z.B. \\ \verb| out_d(" 5
+= U-Test von Mann und Whitney\n");| \\ Sodann geht man in die {\tt
+  switch} Anweisung der Men"uprozedur und f"ugt die entsprechende {\tt
+  case}-Marke f"ur die hinzugef"ugte Nummer an (in unserem Beispiel
+also {\tt case 5}). Hier werden dann die Dialoge gef"uhrt und die
+eigentliche Rechenprozedur aufgerufen.
+
+\section{Dialoge}
+Die Dialoge befinden sich ebenfalls in der Datei {\tt menue.c}.
+Wie man wahrscheinlich gesehen hat, sind die Dialoge sehr primitiv. Es
+gibt allerdings ein Feature des Programmes, welches die Dialoge leicht
+verkompliziert: die M"oglichkeit, da"s der Benutzer jederzeit durch
+dr"ucken der Returntaste einen Dialog abbricht und wieder ins Men"u
+zur"uckkehrt.
+
+Oft beschr"ankt sich der Dialog darauf, den Benutzer zu fragen, welche
+Spalten er welchen Variablen zuordnen m"ochte. Dabei kann man zwei
+F"alle unterscheiden:
+
+\begin{enumerate}
+\item Die Anzahl der Variablen (und damit der Spalten) ist festgelegt,
+  z.B.\ 2 Spalten bei dem einfachen t-Test.
+\item Die Anzahl der Spalten ist variabel, wie dies z.B.\ bei der
+  Erstellung der Korrelationsmatrix der Fall ist.
+\end{enumerate}
+
+Meistens tritt Fall 1 ein. Will man also f"ur den U-Test zwei Spalten
+einlesen, dann wird einfach die Prozedur {\tt getcols(2)}
+aufgerufen.
+
+Bei jedem Einlesevorgang wird die globale bool'sche Variable {\tt empty}
+neu gesetzt. Wird bei einer Eingabe nur die Entertaste gedr"uckt, dem
+Programm also eine Leerzeile "ubergeben, dann wird {\tt empty} auf
+{\em true\/} gesetzt, sonst auf {\em false\/}. Deswegen sollte immer,
+wenn direkt oder "uber eine Prozdeur (wie bei {\tt getcols}) eine
+Eingabeaufforderung stattgefunden hat, "uberpr"uft werden, ob die Eingabe
+`leer' war oder nicht, um dem Benutzer die M"oglichkeit zu geben, den
+Dialog jederzeit abzubrechen. Daher w"urde in unserem Beispiel der Aufruf
+einer Prozedur {\tt u\_test} folgenderma"sen aussehen:
+
+\begin{verbatim}
+   case 5: {
+       getcols(2);
+       if (!empty) {
+          u_test(xx[acol[0]],nn[acol[0]], xx[acol[1]],nn[acol[1]]);
+       }
+   }
+   break;
+\end{verbatim}
+
+Die Namen der Variablen, die {\tt u\_test} "ubergeben werden m"ussen,
+werden im folgenden Abschnitt besprochen.
+
+Bei vielen Statistikprozeduren ist es notwendig, da"s die Spalten alle gleich
+viele Werte haben m"ussen. Dies kann mit der Funktion {\tt equal\_rows}
+getested werden. In diesem Fall kann man also die Zeile \\
+\verb|    if (!empty) { | \\
+aus dem letzten Beispiel durch die Bedingung \\
+\verb|    if ((!empty) && (equal_rows(2))) { |  \\
+ersetzen (wenn z.B.\ 2 Spalten auf gleiche Anzahl "uberpr"uft werden
+sollen).
+
+Falls die Anzahl der Spalten, die von einer Rechenprozedur ben"otigt
+werden, variabel ist, gestaltet sich der Dialog komplizierter. In diesem
+Falle kann man z.B.\ den Dialog f"ur den Aufruf der Funktion
+{\tt correl\_matrix()} im Regre"s-Men"u "ubernehmen.
+
+Mu"s man irgendwelche Parameter direkt vom Benutzer erfragen, so sollte
+man dies in einer bestimmten Form tun: Es gibt eine globale
+String-Variable {\tt line}, in der prinzipiell alle Benutzereingaben
+abgespeichert werden. Dies sollte immer mit Hilfe einiger Makros
+erfolgen, die am Anfang des Programmes definiert sind. In der Regel
+wird eine Abfrage innerhalb eines {\tt switch}-Statements erfolgen.
+Dann verwende man das Makro {\tt GETBLINE}. Dieses Makro lie"st die
+Benutzereingabe in {\tt line} ein und bricht den Dialog ab, falls die
+Eingabe leer war. Will man eine Zahl vom Benutzer eingeben lassen, so
+verwende man nach Aufruf des Makros {\tt GETBLINE} die Funktion {\tt
+getint()} bzw.\ {\tt getreal()} (letztere f"ur {\tt double} Zahlen). Diese
+Funktionen "uberpr"ufen, ob eine g"ultige Zahl eingegeben wurde. Sollen
+einzelne Zeichen eingelesen werden (z.B.\ `j' oder `n' bei ja/nein
+Verzeigungen), so tue man dies nach Aufruf des Makros {\tt GETBLINE} mit
+{\tt sscanf(line, \dq \%c\dq, \&antwort)} oder sowas.
+
+Die eigentliche Rechenprozedur sollte in die Datei {\tt procs.c}
+eingef"ugt werden. Der Funktionsprototyp sollte als {\tt extern}
+deklariert in die Headerdatei {\tt procs.h} geschrieben werden. {\tt
+  funcs.h} gibt einen "Uberblick "uber bereits vorhandenen Funktionen,
+die mit benutzt werden k"onnen.
+
+\section{Variablen und Parameter}
+Alle globalen Variablen befinden sich als {\tt extern} deklariet in
+{\tt statist.h}. Au"serdem befinden sich hier auch die
+Typ-Definitionen.
+
+Die Spalten werden in den Array-Variablen {\tt xx} gespeichert. Die
+Gr"o"se jeder Spalte wird in dem Array {\tt nn} gespeichert. Die
+Spalte {\tt xx[0]} enth"alt also {\tt nn[0]} Werte. Durch den Aufruf
+von {\tt getcols} werden lediglich den Spalten Variablen zugeordnet. Es
+soll ja z.B.\ dem Benutzer m"oglich sein, die Spalte 2 der Variable 1
+einer Prozedur zuzuordnen. In der Array-Variablen {\tt acol} wird
+diese Zuordnung gespeichert. Nehmen wir als Beispiel die Prozedur {\tt
+  u\_test}: Diese Prozedur w"urde vier Parameter ben"otigen,
+n"amlich zwei Feldvariablen {\tt x} und {\tt y}, welche die
+eigentlichen Beobachtungswerte enthalten, und {\tt nx} und {\tt ny},
+die angeben, wie gro"s diese beiden Felder sind. Zun"achst wird also
+{\tt getcols(2)} aufgerufen, um den Dialog auszuf"uhren, welcher die
+Zuordnung der Spalten zu den Variablen "ubernimmt. Daher lautet der
+Aufruf also \\ \verb| u_test(xx[acol[0]],nn[acol[0]],
+xx[acol[1]],nn[acol[1]]); | \\ Es werden also {\em nicht\/} die
+Spalten 0 und 1 "ubergeben, sondern die, welche der Benutzer vorher
+der ersten und zweiten Variable zugeordnet hat!
+
+Um die Datentypen etwas flexibler zu halten, wurde f"ur Gleitkommazahlen
+(also f"ur "`normale"' Werte) der Typ {\tt REAL} eingef"uhrt, der momentan
+auf den Standardtyp {\tt double} gesetzt ist. Aus Konsistenzgr"unden
+sollte man also immer den Typ {\tt REAL} verwenden. Die Deklaration
+f"ur die Funktion {\tt u\_test} sollte also etwa folgenderma"sen
+aussehen: \\
+\verb|    void u_test(REAL x[], int nx, REAL y[], int ny);|
+
+Ist die Anzahl der Variablen, die einer Prozedur "ubergeben werden
+sollen, nicht festgelegt, so wird die Sache komplizierter. In diesem
+Falle gibt es einen Typ {\tt PREAL}, der einen Pointer auf ein {\tt
+REAL}-Array, also im Prinzip eine Spalte darstellt.
+{\tt PREAL} ist folgenderma"sen definiert:
+
+\begin{verbatim}
+   typedef double REAL;
+   typedef REAL* PREAL;
+\end{verbatim}
+
+Deklariert man nun ein Feld vom Typ {\tt PREAL}, so hat man eine
+zweiminensionale Matrix:
+
+\begin{verbatim}
+   PREAL  xx[MCOL];
+\end{verbatim}
+
+Also mu"s eine zweidimensiomale Matrix immer als {\tt PREAL x[]} einer
+Prozedur "ubergeben werden.  Zus"atzlich sollte dann noch die Anzahl
+der Spalten und Spalten angegeben werden. Der ganze Hokuspokus mit
+{\tt PREAL} wird "ubrigens deswegen gemacht, um einer Prozedur eine
+Matrix als Parameter "ubergeben zu k"onnen, deren Spaltengr"o"se
+vollkommen variabel ist.  Wie in so einem Fall die Spalten den
+Variablen zugeordnet werden, schaue man sich anhand des Aufrufes der
+Prozedur {\tt correl\_matrix} an.
+
+
+\section{Fazit}
+\label{sec:fazit}
+
+Hier noch mal eine kurze Zusammenfasung, was zu tun ist, um \st um
+eine Prozedur zu erweitern:
+
+\begin{enumerate}
+\item In {\tt procs.h} die Prozedur {\tt extern}
+  deklarieren (hierbei die Typen {\tt REAL} bzw.\ {\tt PREAL} verwenden).
+\item In {\tt procs.c} neue Prozedur definieren.
+\item In {\tt menue.c} das Men"u suchen, in welches die neue Prozedur
+  am besten hineinpa"st und den Men"utext f"ur die neue Funktion
+  hineinschreiben
+\item Im selben Men"u die entsprechende {\tt switch}-Anweisung
+  suchen, die neue {\tt case}-Marke eintragen und dort den Dialog
+  und den Aufruf f"ur die neue Prozedur hineinschreiben.
+\end{enumerate}
+
+\el
+Noch eine Bitte am Schlu"s: Wenn jemand das Programm erweitert hat,
+w"are es  {\em sehr\/} nett, wenn er mir die neue Version auch
+zukommen lassen w"urde!
+
+\end{document}

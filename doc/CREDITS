@@ -1,0 +1,28 @@
+Dirk Melcher originally wrote statist. 
+He still occasionally contributes bug fixes.
+
+Bernhard Reiter picked up the torch from him around version v0.11,
+and mainly coordinates releases since.
+
+Andreas Beyer translated statist v0.15 to English.
+He also fixed bugs, because he is the author of StatistX, 
+a GUI-frontend for statist.
+
+Masao KAWAMURA found and fixed a couple of bugs in the memory handling 
+of v1.0.0.
+
+Carsten Schulze contributed a bug fix.
+Martin Güth did some testing.
+Stefan Fronzek found a bug.
+
+Michael Gebhard helped translating some comments that were in German.
+
+Jakson Alves de Aquino added some new features (see the file CHANGES for
+details), wrote the English manual, and translated the manual into Portuguese.
+
+Translations:
+  English (original German strings): Andreas Beyer
+  German (new strings): Bernhard Reiter
+  Italian: Nicola Intini and Sandro Tosi
+  Portuguese: Jakson Alves de Aquino
+  Spanish: Carlos Enrique Carleos Artime

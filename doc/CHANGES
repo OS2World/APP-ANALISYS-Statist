@@ -1,0 +1,879 @@
+2009-12-21 STATIST-1.4.2 released
+
+2009-12-10 Jakson Aquino <jalvesaq@gmail.com>
+
+	* statist.c: Fixed division by zero when starting statist in an empty
+	directory, and fixed the bug causing the message 'File "(null)" not
+	found!' while opening a data file interactively. Thanks to Hugo
+	Coolens for reporting these two bugs.
+
+	* menue.c: Add an option to print integer number as integer and not as
+	double when saving columns in an ASCII file.
+
+2008-09-17 Jakson Aquino <jalvesaq@gmail.com>
+
+	* fr_FR.po: New translation by Jean-Baptiste Duclos.
+
+2005-12-02 STATIST-1.4.1 released
+
+2006-12-02 Jakson Aquino <jalvesaq@gmail.com>
+
+	* statist.c: Set NODATA value before parsing command line options.
+
+2006-11-23 Jakson Aquino <jalvesaq@gmail.com>
+
+	* doc/stat_man.tex: Using package epsfig, instead of deprecated psfig.
+
+	* Makefile: Added "make" inside tests directory to first rule, so the
+	tests will be run automatically while building statist.
+
+2006-11-22 Jakson Aquino <jalvesaq@gmail.com>
+
+	* tests/Makefile: Only run memory handling test if check.h is found.
+
+2006-11-21 Jakson Aquino <jalvesaq@gmail.com>
+
+	* de_DE.po: Translation updated by Michael Gebhardt.
+
+2006-11-18 Bernhard Reiter <bernhard@intevation.de>
+
+	* src/Makefile: Remove explicit mention of $(MAKEFLAGS).
+	It was wrongly used. See section recursion of gmake 3.80 manual.
+
+2006-11-18 Jakson Aquino <jalvesaq@gmail.com>
+
+	* procs.c: The min and max values chosen by the user in menu item 4.1
+	were not used if the number of classes wasn't chosen too.
+
+2006-10-21 Jakson Aquino <jalvesaq@gmail.com>
+
+	* data.c: Statist was crashing on menu item 4.1 if there was a "nan"
+	value in the datafile. Now, the string "nan" is read as missing value.
+
+2006-09-30 Jakson Aquino <jalvesaq@gmail.com>
+
+	* statist.c, statist.h: Added --quiet as synonym for --silent.
+
+	* plot.c: Added MSDOS version of function g().
+
+	* procs.c: Partial correlation with five variables wasn't printing
+	some correlation values, and some values were printed twice. The bug
+	was already present in version 1.0.1.
+
+	* data.c, procs.c: In some functions either some lines of code were
+	moved from one place to another or variables were initialized with
+	innocuous values to avoid gcc warnings that a variable could be "used
+	uninitialized".
+
+	* Makefile: No longer using the flag -Wno-uninitialized, and
+	reorganization of commentaries.
+
+	* tests/check_memory_handling.c, tests/statist_check_dummies.c: Two
+	small changes to avoid gcc warnings.
+
+2006-09-16 Jakson Aquino <jalvesaq@gmail.com>
+
+	* data.c: Accepts "N" as answer for questions that check whether the
+	answer was "n".
+
+	* data.c: Now, a blank space is the default field separator for
+	--xcols.
+
+	* data.c: Replaced the messages "Done!" with more informative ones.
+
+2006-09-09 Jakson Aquino <jalvesaq@gmail.com>
+
+	* data.c: Deleted the function getcols_old(), which was replaced
+	almost one year ago.
+
+	* data.c: The function extract_cols() now correctly extract
+	non-numeric values from fixed width column files, but outputs a
+	warning if such a value is found.
+
+	* data.c, data.h, menue.c, statist.c, statist.h: The user now can
+	define the file format interactively, and not only through command
+	line options. Suggestion made by Andreas Beyer.
+
+	* data.c, menue.c, procs.c: The string "y/N" is now added to questions
+	in a printf style (%s). Reason: for incompletely translated .po files
+	the user would see y/N when the answer "yes" for some languages should
+	be the already translated letter "y".
+
+2006-09-07 Jakson Aquino <jalvesaq@gmail.com>
+
+	* menue.c: Small change in "Show column names."
+
+	* menue.c: While saving, don't include the "#%" string if the options
+	--header or detect_header are active.
+
+	* tools/run_comparison.sh: It's no longer obligatory to run the script
+	inside the "tools" subdirectory.
+
+	* data.c: Eliminated inconsistency between parsecomment() and
+	readsourcefile(). Now, both have the same ignore[] string. Added
+	double quotes to the ignore[] string.
+
+	* data.c: --xcols now accepts any character in column names that are
+	not in the ignore[] string of parsecomment() and readsourcefile().
+
+	* data.c, statist.c, statist.h: New options to allow the reading of
+	.csv files: --header, --na-string, and --sep, and, in the statistrc,
+	"autodetect_header".
+
+	* data.c: Do not add the string "#%" to files created with --xcols if
+	either the command line option --header or the statistrc option
+	autodetect_header is active.
+
+	* statist.c: The help message was split to make the translation
+	easier.
+
+2006-08-26 Jakson Aquino <jalvesaq@gmail.com>
+
+	* statist.c: The alert character (^G) no longer is written to
+	statist.log.
+
+	* statist.c: Fixed crash in out_r() on AMD64 when the option --log was
+	active.
+
+	* statist.h, statist.c, data.c, procs.c: Fixed wrong alignment of
+	columns in "Frequency table", "Compare means", and "Show data of
+	columns" when the locale charset is UTF-8, and there is non-ascii
+	characters.
+
+2006-07-10 Jakson Aquino <jalvesaq@gmail.com>
+
+	* statist.c, plot.c: By default, statist will NOT convert gnuplot
+	strings into UTF-8.
+
+	* statist.c: Added hint that creating a ~/.statistrc can improve
+	statist functionalities.
+
+	* plot.c: Removes the GPL_DAT file when the user sends to gnuplot the
+	quit command.
+
+2006-07-08 Jakson Aquino <jalvesaq@gmail.com>
+
+	* plot.c, statist.c: The return value of popen() is not enough to know
+	for sure that gnuplot is in the path. We adopted the plotdrop solution
+	and now we first close the pipe and, then, reopen it. This fix a crash
+	when gnuplot isn't installed and the user tries to run a graphic.
+
+	* menue.c, plot.c: Added menu item "Save last gnuplot graphic as png".
+
+	* statist.c, plot.c: Added statistrc options "gnuplot_default_term" and
+	"gnuplot_png_font".
+
+	* plot.c: Strings sent to gnuplot have their charset converted only if
+	the user didn't choose UTF-8 as the "gnuplot_charset".
+
+2006-01-22 Jakson Aquino <jaksonaquino@yahoo.com.br>
+
+	* plot.c, plot.h, statist.c: Fixed wrong display of strings with
+	accented characters in gnuplot graphics when the environment is set to
+	UTF-8.
+
+2005-01-13 STATIST-1.4.0 released
+
+2006-01-10 Jakson Aquino <jaksonaquino@yahoo.com.br>
+
+	* menue.c: Fixed bug in u-test. Rows with missing values were being
+	deleted. This bug was introduced in the version 1.3.0.
+
+2006-01-05 Jakson Aquino
+
+	* data.c: Fixed segmentation fault when the first column is marked as a
+	column to be ignored (prefix "$" in the column name).
+
+	* data.c: Only ask whether the old data should be deleted if the number
+	of already loaded columns is higher than zero.
+
+	* it_IT.po: Sandro Tosi revised all strings from the Italian catalog.
+
+2006-01-01 Jakson Aquino
+
+	* it_IT.po: Sandro Tosi translated into Italian the strings written 
+	in 2005.
+
+2005-12-27 Jakson Aquino
+
+	* data.c: Fixed incompatible pointer type when compiling in amd64.
+
+2005-12-11 STATIST-1.3.2 released
+
+2005-12-11 Jakson Aquino
+
+	* examples: Added directory "examples".
+
+	* doc/Makefile, tests/Makefile: No longer using "rm" with the option
+	"-f".
+
+2005-11-26 Jakson Aquino
+
+	* data.c, procs.c, menue.c: Statist now considers that the user
+	answered "No" when the key <Enter> is pressed after a question of the
+	type "y/N".
+	
+	* plot.c: Graphics titles and axes labels now can include both single
+	quotes and double quotes. The function fixquote() was created.
+	
+	* procs.c: A math error is printed in the screen and the function
+	tafel_test() is aborted before the value 0.0 is passed to get_ln_0().
+	This avoid fatal errors.
+
+2005-11-19 Jakson Aquino
+
+	* data.c: The fatal errors while reading a data file were converted
+	into normal errors if not running in silent mode. The function
+	delete_last_columns() was added to make this change in statist
+	behavior.
+
+	* data.c: The options --xcols and --xsample no longer must be the first
+	parameter passed to statist. This closes the bug reported by Bernhard
+	Reiter on November 4, 2005.
+
+	* statist.c, statist.1: The description of statist usage now is
+	simpler (suggestion made by Bernhard Reiter).
+
+	* statist.c: Fatal errors in interactive mode now is considered a bug.
+	The user is asked to report the bug to statist mailling list.
+
+	* procs.c: Replaced some calls to get_label() with get_name().
+
+	* statist.h: Eliminated no longer necessary variable "tn".
+
+2005-11-15 Jakson Aquino
+
+	* statist.h statist.c, data.c, menue.c, procs.c: Colorized output now
+	is possible. The functions out_i(), colorize() and set_color() were
+	added.
+
+	* data.c, menue.c, procs.c, statist.c, statist.h: Replaced tmpnam()
+	with tmpfile() to avoid gcc warning that statist uses a dangerous
+	function. Instead of using a list of names (tmpname[]), we now use a
+	list of FILE pointers (tmpptr[]).
+
+	* plot.c: Commands sent to gnuplot are saved and are listed when the
+	user chooses "Enter gnuplot commands". The functions gnuplotcmd() and
+	set_defaults() were added. The expression "STATISTS: " was removed from
+	the title of graphics. The user has the option of adding a string to
+	the beginning of the titles (suggestion made by Andreas Beyer).
+
+	* data.c: Added the function get_name(). Don't waste computer time if
+	the specific column was already created in some functions:
+	inv_transform(), log_transform() etc.
+
+	* menue.c: Replaced the macro PRINTLINE	 with the function printline to
+	output a (possibly) colored line between menus.
+	
+	* procs.c: The probit analysis was opening the already opened file
+	statist.log and, then, closing it. This bug was already present in
+	statist 1.0.1.
+
+	* data.c: Fixed bug in printcols. Big values could cause buffer
+	overrun.
+
+	* COPYING: Updated address of Free Software Foundation.
+
+	* doc/Makefile: Added statistrc among the files to be installed as doc.
+
+	* po/Makefile, tests/Makefile: Added "-f" to avoid error messages if
+	the directory already is clean.
+
+	* src/Makefile: Created STATISTCFLAGS because there are some flags that
+	are needed only by statist.c. Though they cause no harm to the other
+	files, the output of "make" becomes cleaner.
+
+	* doc/statist.1: Added section "SEE ALSO".
+
+2005-11-06 STATIST-1.3.1 released
+
+2005-10-29 Jakson Aquino
+	* inisetup.c: This program creates a .bat file that sets the %PATH%
+	variable for statist under DOS/Windows. It's no longer necessary to
+	install statist at %WINDIR%.
+
+	* statist.c: Changed default directory of some files for DOS/Windows
+	version of statist.
+
+2005-10-26 Jakson Aquino
+	* data.c, menue.c: Added "Export data base as fixed width data file".
+
+2005-10-15 Jakson Aquino
+	* data.c, menue.c: Replaced the old function getcols with the new one.
+
+2005-09-21 Jakson Aquino
+	* Added function set_winsize(): In statist.c, the function uses
+	  sys/ioctil.h to determine the terminal size (columns and lines).
+
+	* Added menu item "Preferences": prefs_menu() was added to menue.c; and
+	  statist.c received the functions prefs_filename(), save_prefs(), and
+	  STRCAT().
+
+	* data.c: Fixed bugs in delete_labels() and check_labels(). Improved
+	  printcols().
+
+	* data.c: Fixed bug in inv_transform(); the inverted values were not
+	  corresponding to the original ones because rows with missing values
+	  were being deleted before the inversion.
+
+	* data.c: Fixed bug in extract_cols(): segmentation fault when
+	  extracting more than 250 columns.
+
+	* menue.c: Improved the menu option "List names of columns".
+
+	* procs.c: multiple_reg() and cross_validate(): The values of the
+	  columns "resi" and "pred_" were in the wrong rows if there were
+	  missing values. Bug fixed.
+
+2005-09-11 Jakson Aquino
+	* Eliminated label_tab: this variable from data.c was duplicating the
+	  values found in xx[] and alias[]. Now, xx[] and alias[] are used
+	  directly in get_label().
+
+	* Added value labels and column titles: with the option --labels,
+	  statist reads column and value labels from a file.  Functions added
+	  to data.c: read_labels(), check_labels(), delete_labels(),
+	  attach_labels_to_columns(). New global variables: "first_labels" and
+	  "names[]".
+
+2005-09-07 Jakson Aquino
+	* procs.c: Skipping numerous error messages if the user chooses the
+	  wrong variables in probit().
+
+	* New descriptive menu items: "Frequency table", and "Compare
+	  means". New functions: freq_table(), mirror_compare_up(), center(),
+	  whatwidth_i(), whatwidth_r(), and compare_means().
+
+	* data.c: Added new versions of getcols() and printcol(): "getcols2()"
+	  and "printcols()". We have to choose what we will keep in the code.
+
+	* data.c: log_transform() and ln_transform() are no longer aborted if
+	  there are values equal or lower than zero. The results become missing
+	  values.
+
+	* Added function read_options(): which reads the file ~/.statistrc.
+
+	* Added "verbose" and "system_ls":  boolean variables.
+
+	* statist.c: Now, to pass more than one file as argument for statist is
+	  fatal error only if statist is running in silent mode.
+
+2005-09-01 Jakson Aquino
+
+	* Removed German strings from source code.
+
+	* procs.c: Uninitialized variables were being used when running
+	  part_corr() with 5 variables. The bug was fixed (thanks to valgrind).
+
+	* procs.c: Reindented histogram() and standard().
+
+	* procs.c: equal_freq() and compare_freq() were causing segmentation
+	  fault when there were more than 60 classes of frequency. Bug fixed.
+
+2005-08-30 Jakson Aquino
+	* Eliminated the 60 columns limit: Now the limit to the number of
+	  columns depends on the the maximum number of files that the operating
+	  system can open simultaneously. Details:
+	   + New functions:
+		void inflate_MCOL();
+		char * get_default_label(int i);
+		void create_columns(int amount);
+		void free_column(int i);
+		void delete_column(int i);
+	   + Functions significantly modified:
+		char *makefilename(int i); (was: char *makefilename(int, char*))
+		void erasetempfiles();
+		int parsecomment(char *comment);
+		char * get_default_label(int i); (was: void create_label(int))
+		void readsourcefile(char *sourcename);
+	   + The global variable n_alias is no longer necessary: The comparison
+	     between the number of labels and the number of columns is now made
+	     only inside the function readsourcefile(). After this, n_alias has
+	     the same value of ncol. Thus, we don't need the two variables.
+
+	* Changes in "tests" directory:
+	   + Added: test_xcols.sh, xcols.config, and xcols.dat
+	   + Makefile: added test_xcols among the possible tests, and added
+	     comments about the pre-requisites for running the tests.
+
+	* Fixed memory leak in myexist().
+
+	* Fixed bug in plot_command(): The function was testing only if the
+	  user typed "quit". However, gnuplot quits whenever the first letters
+	  in a line might unambiguously be interpreted as "quit" or "exit".
+	  Gnuplot also skips leading blank characters. The bug was causing
+	  statist run an infinite loop when the wrong letters were sent as
+	  commands to gnuplot. Now, Statist is overzealous. It closes the pipe
+	  with gnuplot whenever the line first letters are either "q" or "ex".
+
+	* Added the option --version: The usage tip was detached from
+	  VERSION_INFO.
+
+	* Updated po files.
+
+	* Added function ls(): The function is called when the user is asked to
+	  enter a file name, and, as the name suggests, it lists the content of
+	  the current directory.
+
+	* Fixed bug in equal_rows(): The function was testing vn. The correct
+	  is to test nn. The bug was introduced while correcting the missing
+	  values problem and would manifest itself only when the user "Read
+	  another file" with different number of rows, but any user knowing
+	  what he was doing would never run analysis using columns of unrelated
+	  databases (unless he was testing Statist robustness).
+
+	* Fixed bug in plot.c: xtics were disappearing after running the code:
+	  "set xtics %g, %g, %g". The command "set xtics" wasn't enough to
+	  reset the "start", "increment", and "end" values previously defined.
+	  Now we are using "set xtics autofreq". This change might only cause
+	  problems for people using very outdated versions of gnuplot, because
+	  the option "autofreq" is part of gnuplot since Dec 1998.
+
+	* Replaced all gnuplot commands "set novar"  with "unset var": The
+	  commands "set novar" were deprecated by gnuplot since Aug 17, 1999.
+
+	* Name of gnuplot data file is no longer fix: If the name of the
+	  gnuplot data file already exists, a number is added to the name. Now
+	  it's possible to use the gnuplot command "replot" with multiple
+	  instances of statist. This closes the bug report opened on Sep 12,
+	  1997.
+
+Changes up to 1.3.1:
+
+    by Bernhard Reiter <bernhard@intevation.de>:
+    	* Fixed the tests to use the long options instead of short deprecated.
+
+
+2005-08-27 STATIST-1.3.0 released
+
+
+Changes up to 1.3.0: 
+
+    by Bernhard Reiter <bernhard@intevation.de>:
+
+	* Fixed the unit tests.
+	  + tests/test_4_1.sh: fixed test: expecting new comment in the output.
+	  + tests/check_memory_handling.c: fixed test for "check" v>=0.9.0. 
+
+	* Minor editing of the English manual.
+	  + Minor clean of doc/Makefile: 
+	    - Ignoring errors of rm.
+	    - Declared phony targets .PHONY. Also rewrote "all" target.
+	  + Called the operating system GNU/Linux as Linux is only a kernel.
+	  + Made the message recommending Free Software friendlier and
+	    more correct about the security implications.
+	  + added the gnuplot method to create output files.
+	  + updated the build and install instructions. "su -" in general
+	    is prefered over "su".
+
+    by Jakson Aquino <jaksonaquino@yahoo.com.br>
+
+	* memoryhandling.c: Added myrealloc().
+
+	* data.c: Added the function get_line(), adapted from the GNU
+	  function getndelim2() (coreutils/lib/getndelim2.c).
+
+	* New options format: Long option begin with `--', and now we have
+	  short versions of the options.
+
+	* Small changes in the code to keep it compiling on DOS/Windows:
+	  gettext support is working under Windows. The use of pgnuplot
+	  makes possible the communication with gnuplot through pipe.
+	  Statist looks for message catalogs in %WINDIR% and saves temporary
+	  files in %TEMP%, which are Windows environment variables.
+
+	* Updated documentation: (English and Portuguese).
+
+	* Added new features:
+	   - extract columns from fixed width data file;
+	   - extract a sample from the rows of a file;
+	   - recode a Statist data file. (Removed before the release of version
+	     1.3.0)
+
+	* Replaced the option -delrow with a new system: Now, the rows are
+	  deleted during analyzes (when necessary), and we are using the
+	  smallest double number as missing value. It was necessary a lot of
+	  data manipulation to do some analyzes with the old system. Changes
+	  made with helpfull comments by Andreas Beyer and Bernhard Reiter.
+
+	* Fixed defaults names given to columns after column z: Now, after z,
+	  we have aa, ab, ac ... The columns were receiving non-alpha numeric
+	  or even unprintable characters as names.
+
+	* Fixed conflict between gettext and gnuplot: set locale to C before
+	  working with data files and with gnuplot, and reset locale to current
+	  locale after these tasks. With Andreas Beyer and Bernhard Reiter.
+
+	* Translation into English of comments that still were in German: With
+	  the help of Michael Gebhardt and Bernhard Reiter.
+
+
+Changes up to June 2005 (cvs version of Statist)
+by Bernhard Reiter <bernhard@intevation.de> 
+
+	* added first part of new English manual by Jakson Aquino 
+	and README in doc/.
+
+	* eliminated lang_defs.h as proposed by Jakson Aquino, because
+	  we will only have two language in the source and others with gettext.
+
+	* funcs.[hc] Removed unused function get_quantile().
+	(This was in the code a long while and unused even before 0.11.b010.)
+
+	* Added Makefile.inc to have a central place to configure where
+	stuff is installed and the message cataloges are searched in.
+	Included it from */Makefile.
+	
+	* src/Makefile: Added an "install" target.
+
+	* added new directory po with translations. The work was done
+	by Jakson Aquino. (This is untested so far, as a recent gettext
+	and root right are currently necessary.)
+		Added translations
+				de_DE.po Original statist texts
+				es_ES.po Carlos Enrique Carleos Artime
+				pt_BR.po Jakson Alves de Aquino
+				it_IT.po Nicola Intini
+
+	* statist.h: Bumbed publishing year to 2005, added newline between
+	copyright and the hint.
+
+	* src/*: Checked in a lot of language corrections by Jakson Aquino.
+	Mainly the English test is improved, but also some translations
+	were added and Bernhard made some additional improvements.
+
+	* Makefile: added rule for memory_handling.o (patch by Jakson Aquino).
+
+	* statist.h: removed declaration of external errno as int.
+	Both K&R and the GNU libc manual (section Checking for Errors)
+	mention that this is declared in errno.h, which leaves
+	the possibility of this being a macro and not a real int.
+
+	* removed very old unused file src/iodefs.c from the repository.
+	(It had been made inactive before statist 0.12. in 1998.)
+
+	* preparations for gettext usage:
+
+		* Makefile: Moved LANGUAGE into EXTRACFLAGS. 
+		Added examples for running xgettext, msgmerge 
+		and msgfmt and EXTRACFLAGS settings.
+
+		* data.c, menu.c, procs.c: Indicated choice defaults, 
+		switched y from char to string in preperating 
+		for using real gettext.
+
+		* menu.c,statist.c: Added double translatable _ALL_.
+
+		* gettext.h: Updated header. Added N_() Makros.
+		Including <libintl.h> and <locale.h> instread of <intl.h>.
+
+		* statist.c: added setting of locale for LC_CTYPE
+		and LC_MESSAGES when using gettext.
+
+		* statist.c: Changed way of printing the VERSION_INFO to make
+		it translatable. Added printout of compile flags like DEBUG
+		LOCALEDIR or LANG.
+
+		* statist.h: New VERSION_INFO to make it translatable.
+		Added LOCALEDIR fallback. 
+
+		* statist.h: _ALL_ is N_() here.
+
+	* Resolved name clash with out_err errno, 
+	discovered by Stefan Fronzek trying to compile on Cygwin.
+
+	* added hint for compilation with MinGW (Thanks to Andreas Beyer).
+
+Changes up to v1.0.1: Bernhard Reiter <bernhard@intevation.de>
+	* cleanup: grouped memory functions and moved them to
+	new source files: memory_handling.[hc]
+
+	* fix: reworked memory handling, only the functions mycalloc, myalloc
+	and myfree() are used now. A couple of free()s where too much.
+	Thanks to KAWAMURA Masao <kawamura@mlb.co.jp> and his patch   
+	for pointing me to the problem.
+
+	* memory handling: no fixed limit on temporary variables anymore
+	all memory allocated with m_calloc() is now deallocated by m_freeall(). 
+	So removed n_ptr, ptr_arr and MPTR from the code.
+
+	* cleanup: removed alread inactived myfopen() from the code completly
+
+	* Improved err message if a bad option is given.
+
+	* cleanup: removed oldmakefiles and Makefile.in as they were
+	getting more and more out of date.
+
+Changes up to v1.0:   Bernhard Reiter
+	* Andreas Beyer contributed for a patch for procs.c 
+	to make the u-Test single sided Result more clear
+	* added a bit more buffer and a limit to a sscanf format string.
+	* added percentile calculation
+	* the "enter gnuplot command" menu entry has got a different number!
+
+Changes up to v0.16:  Bernhard Reiter
+        * restructured; added src, doc and src/oldmakefiles directories
+	* fixed Makefile, added Makefile.in which is not necessary
+	* added Dirk's patch to procs.c to fix strange segfault 
+		in correl_matrix and rank_matrix
+
+	  changes by Andreas Beyer <abeyer@usf.uni-osnabrueck.de) 10. Feb 2000:
+
+	* introduction of two-language-code and translation to English
+	(compile with -DLANG=LANG_EN for English, -DLANG=LANG_DE for German>)
+	* include <stdio.h> in statist.h
+	* saver check in func. col_exist() in data.c
+	* all printf() either changed to out_r or commented out for StatistX
+
+
+Changes up to v0.15:	Bernhard Reiter
+	* statist.h
+		fixed the GET.LINE macros in statist.h, Dirk forgot
+		to eliminate the "\n" 
+
+	* statist.h 
+          data.c
+		added MSDOS_FIXED_TMP_FILE macro
+
+	Contributions from D.Melcher, he resolves the following bugs:
+		in  statist.h data.c procs.c                                                                       
+| 1.) Ich habe von jemandem den Hinweis bekommen, dass noch ein kleiner Fehler 
+| in der Wilcoxn-Prozedur fuer den Paarvergleich drin ist. Es handelt sich um 
+| das Konfidenzintervall. Im Gegensatz zu der Testgroesse muss naemlich dass
+| Konfidenzintervall auss ALLEN Differenzen EINSCHLIESSLICH der 0-Differenzen
+| werden werden.
+|  
+| 2.) Nach dem Update auf die glibc habe ich einige seltsame Abstuerze bei
+| statist entdeckt, die beim 'Aufraeumen' stattfanden. Ich bin dahinter 
+| gekommen, dass das durch einige free() Aufrufe zustandegekommen ist, bei 
+| denen der Zeiger nicht (mehr) auf reservierten Speicher zeigte.
+|  
+| 3.) Bein kompilieren mit einer neueren gcc -Version wird darauf hingewiesen,
+| dass man aus Sicherheitsgruenden statt gets() fgets verwenden sollte.           
+
+
+	Andreas Beyer made statist fit for his StatistX GUI,
+	I tried to integrate that in a sensible manner.
+
+[...]
+| lediglich für den Gebrauch mit StatistX angepasst. Wesentliche
+| Änderungen sind:
+| (1) Die Funktionen out_start() und out_end() in procs.c.
+|     Diese Funktionen indizieren den Beginn bzw. das Ende eines 
+|     Ergebnissblocks. Dadurch wird es für die grafische Oberfläche möglich, 
+|     den gesamten output, der sich auf eine Menufunktion bezieht in einem 
+|     Fenster darzustellen.
+[..]
+|     Für diese Funktionen gelten strenge Regeln:
+|     (a) Vor dem Aufruf des ersten out_r() MUSS out_start() ausgeführt werden.
+|     (b) Vor dem Verlassen einer Prozedur MUSS out_end() ausgeführt werden.
+|     (c) Beide Funktionen dürfen/müssen nur genau einmal in jeder Prozedur
+|         aufgerufen werden.
+| (2) statist.h:
+|    Hier sind die beiden Funktionen von oben deklariert.
+
+[Wenn keine Biliothek gemacht wird, werden diese Funktione zum leeren Makro ]
+
+|    TRUE und FALSE werden nur noch dann definiert, wenn sie es noch nicht
+|    sind. Das verhindert Kollisionen mit der gdk-lib.
+| (3) Die Funktion get_label wird nicht kompiliert, wenn das Makro STATIST_X
+|     definiert ist.
+| (4) Das Makefile wurde angepasst, damit Bibliotheken erzeugt werden können.
+	
+	
+
+
+Changes up to v0.14.1: 
+Sat Feb 13 01:04:49 UTC 1999	Bernhard Reiter
+	One error message improved. 
+
+	* data.c
+		The string, which cannot be read as data value from a file
+		is now given in the error message. Thanks to Carsten Schulze.
+
+	* Makefile
+		Added (simple) compiler flags for DEC's cc. 
+
+Changes up to v0.14:
+Tue Aug 18 16:10:03 UTC 1998	Bernhard Reiter
+	Only cosmetic changes and documentation improvements.
+        
+	* data.c
+        	- added comment lines to makefilename() so it is clear,
+                which line to change, if you want another place for the
+                temporary files under MSDOS.
+                - added check if old indicator (#!) for label lines is used
+                (if the current label indicator is not equal to the old one)
+               
+       	* Makefile
+        	- added *.log *.aux to rm of target clean
+        
+        Documentation:
+        * mydefs.sty
+        	deactivated lines which aren`t used in programm.tex, but
+                confused modern LaTeXs.
+
+	* programm.tex
+        	Added warning that documentation is outdated.
+                
+        * stat_man.tex
+        	Some updates.
+                - about how to give columnnames to statist
+                with the new indicator "#%". 
+                - about using "M" instead of "." for missing data
+		- that c:\tmp has to exist on MSDOS systems
+                - how to change the sources to
+                get back the old behaviour in this three cases
+                
+                   
+Changes up to v0.13:
+Wed Feb 18 10:24:10 UTC 1998	Bernhard Reiter
+	* in procs.c/procs.h
+        	-splitted standard(): calculation for the histogram 
+                was extracted into new funtion histogram()
+		-bug fix: check of zeroclass is now entered, when 
+                autoclass is enabled.
+
+
+Changes up to v0.12:
+Mon Feb 16 17:27:17 UTC 1998	Bernhard Reiter
+Dirk Melcher has made some changes, which were incorporated in the 
+code base. Some notes in German follow:
+
+| Notizen zu den Änderungen von statist-0.11pl1 zu Dirks Version vom 13.2.1998.
+| Es wird angemerkt, welche Änderungen für v0.12 übernommen wurden.
+| 
+| plot_histo hat sich geändert. Es gibt einen Parameter mehr: BOOLEAN discrete.
+| (nicht übernommen.)
+| 
+| Eine neue Option: "-delrow" überliest Zeilen, die nicht alle Werte enthalten
+| 
+| Ein fehlender Wert wird nun mit "M" gekennzeichnet.
+| 	(dies wurde wohl auch deshalb geändert, weil es die Implementation
+|         von "-delrow" erleichtert.)
+| 
+| Fehler mit exakten Spaltennamen, die den Anfang eines anderen Spaltennamen
+| 	darstellen ist behoben.
+| 
+| Fehler, der bei mehrmaligem Exportieren als Textdatei (Menü Datenverwaltung)
+| 	auftreten konnte, ist behoben.
+| 
+| (Ein kleines Miniprogramm, um die Länge einiger Datentpyen auszugeben: size.c)
+| 
+| 
+| Die Quelldateien im Einzelnen:
+| ==============================
+| 
+| data.c: makefilename()
+| 		Wenn MSDOS definiert ist, gehen Dateien nach c:\tmp\statxxx.tmp
+| 	
+|         readsourcefile()
+|        	*Kein Vergleich mehr, ob die Länge des gelesenen Tokens Eins ist
+|               An zwei Stellen.(Habe ich nicht übernommen.)
+|               *Fehlermeldung, wenn Spaltenzahl überschritten, verbessert.	
+|         	*überlese Zeilen, die NODATA enthalten.
+|         
+|         getcols()
+|         	*testet erst auf exakte Spaltennamen, bevor Ergänzung probiert
+|                 wird.
+|                 
+|         neue Funktion: col_exist()
+| 
+| 
+| data.h: col_exist() eingetragen
+| 
+| 
+| iodefs.c entfernt.
+| 
+| 
+| menue.c: Fall "6" bei Menü Datenverwaltung: n_max initialisieren.
+| 
+| 
+| plot.c:	init_gnuplot()
+| 		Wenn MSDOS definiert ist: FOPEN mit "wt" anstatt mit "w" 
+| 	
+|         plot_pair()
+|         	Die Gnuplotbefehle, um die Funktion für die 
+|                 lineare Regression zu definieren, verwenden jetzt Variablen.
+|                 
+|         plot_histo()
+|         	(Änderungn für Parameter discrete wurden von mir nicht 
+|                 übernommen)
+| 
+| procs.c:multiple_reg()
+| 		Erstmal neue Variablen: int j, REAL *resi, theo
+|                 Später wird eine Spalte "resi" angelegt, bzw. aufgefrischt.
+|              
+|         equal_freq() und compare_freq()
+|         	Neue Variable: REAL chi;
+|                 chisq wird mit Zwischenwert chi berechnet.
+|                 
+|         standard()
+|         	"discrete" eingeführt, mit anderem plot_hist() Aufruf.
+|                 (Nicht übernommen, da die Lösung in Bernhards Hacks besser ist.)        		             
+| 
+
+
+Changes up to Bernhard`s Hacks v0.10:
+(Changing the version number in statist.h is not further mentioned.)
+
+Wed Feb 11 10:52:58 UTC 1998	Bernhard Reiter
+bv0.10
+	* in procs.c
+        	autoclass and choosing a number of classes now
+                	use the same algorithm 
+
+Fri Jan 16 20:40:11 UTC 1998	Bernhard Reiter
+bv0.09
+	* in plot.c / plot_histo()
+        	gnuplot command "set xtics" is only done with numbers,
+                	if the plot would have not more than ten classes
+        * type in statist.h fixed
+                       
+Thu Jan 15 22:53:25 UTC 1998	Bernhard Reiter
+	* typo in menue.c fixed: Datenmaniputlation
+        
+Wed Jan 14 18:11:40 UTC 1998	Bernhard Reiter
+	* changed plot.c
+        	-sets gnuplot variable linestyle=1 per default.
+                -Leaves more space on the top of histo-plots
+                especially if the maxy is high
+                
+Sun Jan 11 17:58:56 UTC 1998	Bernhard Reiter
+bv0.08
+	* changed plot.c:
+        	sets gnuplot variable "linestyle=2" and plot_histo uses that
+                the user can now change the linestyle and do replot
+                with typing e.g. "linestyle=1" as a gnuplot command 
+                "Haeufigkeit" --> "Häufigkeit" at ylabel
+
+Dec 23 1997	Bernhard Reiter 
+bv0.07
+	* added: natural log and exp transformation 
+        * added: hint for "alle" at column selection for correlation matrix 
+        * changed: behaviour when plotting histograms
+        	sets the classes different and more correctly
+                checks for discret data and uses plot_histo_discrete then
+        	TODO: adapt automatic class estimation to that.
+        * new/changed: plot_histo and plot_histo_discrete
+        	plot_histo will plot with "linestyle 2" must have gnuplot 3.6
+        
+Jul 23 1997	Bernhard Reiter
+	* added: Option "--bernhard" 
+        	=> Table output at misc/standard deviation
+                => if "-noplot" is given, no text histogram will be put out
+
+
+Changes up to Bernhards Bugfixes v0.01:
+
+Wed Jul 23 18:22:36 UTC 1997	Bernhard Reiter
+	* procs.c (standard()) fixed a bug, which caused a seg-fault, if
+		a higher min or lower max was choosen for standard.
+
+	* procs.c (outlier()) fixed a bug.
+		The new column was not created correctly.
+		(It was obivously forgotten, when Dirk changed 
+		make_new_col() )
+
+Last revision from Dirk was v0.11.
+     out_d(_("   5 = Chi^2 two-items-test\n") );

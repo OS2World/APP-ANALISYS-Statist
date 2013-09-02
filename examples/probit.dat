@@ -1,0 +1,11 @@
+# As you can see, we can mix spaces and tabs, and their number between fields
+# don't matter. All lines below have exactly three columns.
+#%dose number effect
+25 		15 3
+30 18 	8
+40        16 6
+60 43 		26
+70 56 35
+80 41 32
+90 12 10
+100 23 22
